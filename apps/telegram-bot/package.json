@@ -1,0 +1,66 @@
+{
+  "name": "@telegram-bot/telegram-bot",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "targets": {
+      "build": {
+        "executor": "@nx/esbuild:esbuild",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "defaultConfiguration": "production",
+        "options": {
+          "platform": "node",
+          "outputPath": "apps/telegram-bot/dist",
+          "format": [
+            "cjs"
+          ],
+          "bundle": false,
+          "main": "apps/telegram-bot/src/main.ts",
+          "tsConfig": "apps/telegram-bot/tsconfig.app.json",
+          "assets": [
+            "apps/telegram-bot/src/assets"
+          ],
+          "esbuildOptions": {
+            "sourcemap": true,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        },
+        "configurations": {
+          "development": {},
+          "production": {
+            "esbuildOptions": {
+              "sourcemap": false,
+              "outExtension": {
+                ".js": ".js"
+              }
+            }
+          }
+        }
+      },
+      "serve": {
+        "continuous": true,
+        "executor": "@nx/js:node",
+        "defaultConfiguration": "development",
+        "dependsOn": [
+          "build"
+        ],
+        "options": {
+          "buildTarget": "@telegram-bot/telegram-bot:build",
+          "runBuildTargetDependencies": false
+        },
+        "configurations": {
+          "development": {
+            "buildTarget": "@telegram-bot/telegram-bot:build:development"
+          },
+          "production": {
+            "buildTarget": "@telegram-bot/telegram-bot:build:production"
+          }
+        }
+      }
+    }
+  }
+}
