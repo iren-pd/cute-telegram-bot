@@ -6,7 +6,9 @@
   "private": true,
   "dependencies": {
     "axios": "^1.6.0",
-    "firebase": "^11.8.0"
+    "dotenv": "^16.5.0",
+    "firebase": "^11.8.0",
+    "telegraf": "^4.16.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
@@ -23,6 +25,7 @@
     "esbuild": "^0.19.2",
     "eslint": "^9.8.0",
     "eslint-config-prettier": "^10.0.0",
+    "nodemon": "^3.1.10",
     "nx": "21.1.0",
     "prettier": "^2.6.2",
     "tslib": "^2.3.0",
