@@ -8,6 +8,7 @@ async function registerUser(user: User): Promise<void> {
       nickname: user.nickname || '',
       createdAt: user.createdAt,
       role: user.role || UserRole.GUEST,
+      wallet: user.wallet || { kisses: 0, hugs: 0, createdAt: new Date() },
     });
     console.log('Пользователь добавлен!');
   } catch (e) {
