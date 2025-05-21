@@ -1,10 +1,13 @@
 import { doc, setDoc } from 'firebase/firestore';
-import { User, UserRole } from '../../../models/user.model';
+import { User } from '../../../models/user.model';
 import { db } from '../../firebase/firebase';
-
+import { v4 as uuidv4 } from 'uuid';
 async function registerUser(user: User): Promise<void> {
   try {
+    const generatedId = user.id || uuidv4();
+
     await setDoc(doc(db, 'users', String(user.telegramId)), {
+      id: generatedId,
       username: user.username || '',
       createdAt: user.createdAt || new Date().toISOString(),
       role: user.role || 'user',
@@ -13,10 +16,16 @@ async function registerUser(user: User): Promise<void> {
         premium: 0,
         createdAt: new Date().toISOString(),
       },
-      state: user.state || null,
+      state: user.state || {
+        currentPage: 'start',
+        previousPage: 'start',
+        cart: {
+          dishes: [],
+          totalPrice: { kisses: 0, premium: 0 },
+        },
+      },
       updatedAt: user.updatedAt || null,
     });
-    console.log('Пользователь добавлен!');
   } catch (e) {
     console.error('Ошибка при добавлении пользователя:', e);
   }
