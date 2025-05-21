@@ -1,16 +1,17 @@
-import { Wallet } from "./wallet.model";
+import { Wallet } from './wallet.model';
 
 export enum UserRole {
-  ADMIN = 'admin',
-  USER = 'user',
-  GUEST = 'guest',
+  ADMIN = 'ADMIN',
+  USER = 'USER',
+  GUEST = 'GUEST',
 }
 
 export interface User {
+  id?: string;
   telegram_uid: string;
-  nickname?: string;
-  state?: string;
-  createdAt: Date | string;
-  role?: UserRole;
-  wallet?: Wallet;
+  nickname: string;
+  role: UserRole;
+  createdAt: string;
+  updatedAt?: string;
+  wallet: Wallet;
 }
