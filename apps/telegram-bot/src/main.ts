@@ -1,8 +1,9 @@
 import { Telegraf, session, Scenes } from 'telegraf';
 import stage from './bot/scenes';
+import 'dotenv/config';
 
 const bot = new Telegraf<Scenes.SceneContext>(
-  process.env.TELEGRAM_BOT_TOKEN || ''
+  process.env.NX_TELEGRAM_BOT_TOKEN || ''
 );
 
 bot.use(session());
