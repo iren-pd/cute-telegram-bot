@@ -1,5 +1,5 @@
 import { doc, setDoc } from 'firebase/firestore';
-import { User, UserStatePage } from '../../../models/user.model';
+import { User, UserRole, UserStatePage } from '../../../models/user.model';
 import { db } from '../../firebase/firebase';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -11,7 +11,7 @@ async function registerUser(user: User): Promise<void> {
       id: generatedId,
       username: user.username || '',
       createdAt: user.createdAt || new Date().toISOString(),
-      role: user.role || 'user',
+      role: user.role || UserRole.GUEST,
       wallet: user.wallet || {
         kisses: 0,
         premium: 0,
