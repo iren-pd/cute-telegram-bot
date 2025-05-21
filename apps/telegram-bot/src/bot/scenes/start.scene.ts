@@ -56,7 +56,7 @@ startScene.enter(async (ctx) => {
           currentPage: UserStatePage.MAIN_MENU,
         },
       });
-      await ctx.reply('Добро пожаловать! Доступ разрешён.');
+      await ctx.scene.enter('main_menu');
     }
   } else {
     await ctx.reply('Вы не милый котик, у вас нет доступа к этому боту.');
