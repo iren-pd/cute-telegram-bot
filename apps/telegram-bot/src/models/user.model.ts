@@ -1,3 +1,5 @@
+import { Order } from './order.model';
+
 export interface Wallet {
   kisses: number;
   premium: number;
@@ -7,6 +9,12 @@ export interface Wallet {
 
 export type UserRole = 'admin' | 'user' | 'guest';
 
+export interface UserState {
+  currentPage: string;
+  previousPage: string;
+  cart: Order;
+}
+
 export interface User {
   id: string;
   telegramId: number;
@@ -15,4 +23,5 @@ export interface User {
   createdAt: string;
   updatedAt?: string;
   wallet: Wallet;
+  state: UserState;
 }
