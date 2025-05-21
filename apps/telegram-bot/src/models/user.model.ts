@@ -7,11 +7,23 @@ export interface Wallet {
   updatedAt?: string;
 }
 
-export type UserRole = 'admin' | 'user' | 'guest';
+export enum UserRole {
+  ADMIN = 'admin',
+  USER = 'user',
+  GUEST = 'guest',
+}
+
+export enum UserStatePage {
+  START = 'start',
+  MAIN_MENU = 'main_menu',
+  CART = 'cart',
+  MENU = 'menu',
+  CATEGORY = 'category',
+}
 
 export interface UserState {
-  currentPage: string;
-  previousPage: string;
+  currentPage: UserStatePage;
+  previousPage: UserStatePage;
   cart: Order;
 }
 

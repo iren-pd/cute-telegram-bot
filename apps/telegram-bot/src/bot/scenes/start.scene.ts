@@ -3,6 +3,7 @@ import { allowedUsers } from '../../config/user.config';
 import registerUser from '../../services/users/actions/registerUser';
 import updateUser from '../../services/users/actions/updateUser';
 import getUser from '../../services/users/actions/getUser';
+import { UserRole, UserStatePage } from '../../models/user.model';
 
 const startScene = new Scenes.BaseScene<Scenes.SceneContext>('start');
 
@@ -21,7 +22,7 @@ startScene.enter(async (ctx) => {
       id: '',
       telegramId,
       username,
-      role: 'guest',
+      role: UserRole.GUEST,
       createdAt: new Date().toISOString(),
       wallet: {
         kisses: 0,
@@ -29,8 +30,8 @@ startScene.enter(async (ctx) => {
         createdAt: new Date().toISOString(),
       },
       state: {
-        currentPage: 'start',
-        previousPage: 'start',
+        currentPage: UserStatePage.START,
+        previousPage: UserStatePage.START,
         cart: {
           id: '',
           userId: '',
@@ -48,11 +49,11 @@ startScene.enter(async (ctx) => {
   if (allowedUsers.includes(username)) {
     if (user) {
       await updateUser(String(telegramId), {
-        role: 'user',
+        role: UserRole.USER,
         updatedAt: new Date().toISOString(),
         state: {
           ...user.state,
-          currentPage: 'start',
+          currentPage: UserStatePage.MAIN_MENU,
         },
       });
       await ctx.reply('Добро пожаловать! Доступ разрешён.');
