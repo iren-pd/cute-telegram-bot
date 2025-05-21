@@ -46,7 +46,7 @@ mainMenuScene.enter(async (ctx) => {
     );
     return;
   } else {
-    await ctx.reply('Нет доступа. Пожалуйста, авторизуйтесь.');
+    await ctx.reply('Вы не милый котик, у вас нет доступа к этому боту.');
     await ctx.scene.enter('start');
     return;
   }
