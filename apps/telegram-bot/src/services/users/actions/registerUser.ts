@@ -1,7 +1,8 @@
 import { doc, setDoc } from 'firebase/firestore';
-import { User } from '../../../models/user.model';
+import { User, UserStatePage } from '../../../models/user.model';
 import { db } from '../../firebase/firebase';
 import { v4 as uuidv4 } from 'uuid';
+
 async function registerUser(user: User): Promise<void> {
   try {
     const generatedId = user.id || uuidv4();
@@ -17,8 +18,8 @@ async function registerUser(user: User): Promise<void> {
         createdAt: new Date().toISOString(),
       },
       state: user.state || {
-        currentPage: 'start',
-        previousPage: 'start',
+        currentPage: UserStatePage.START,
+        previousPage: UserStatePage.START,
         cart: {
           dishes: [],
           totalPrice: { kisses: 0, premium: 0 },
