@@ -1,6 +1,6 @@
 import { Dish } from './dish.model';
 
-export type OrderStatus = 'new' | 'processing' | 'ready' | 'cancelled';
+export type OrderStatus = 'no-status' | 'new' | 'processing' | 'ready' | 'cancelled';
 
 export interface OrderDish {
   dish: Dish;
@@ -25,6 +25,6 @@ export interface Order {
   status: OrderStatus;
   comment?: string;
   payment: OrderPayment;
-  createdAt: Date;
-  updatedAt?: Date;
+  createdAt: string;
+  updatedAt?: string;
 }
