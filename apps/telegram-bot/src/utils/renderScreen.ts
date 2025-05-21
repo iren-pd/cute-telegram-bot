@@ -38,6 +38,7 @@ const renderScreen = async (
   }
 
   await ctx.reply(message, keyboard);
+  return;
 };
 
 export default renderScreen;

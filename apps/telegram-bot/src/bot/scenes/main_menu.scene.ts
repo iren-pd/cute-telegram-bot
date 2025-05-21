@@ -3,6 +3,7 @@ import mainMenuKeyboard from '../keyboards/mainMenuKeyboard';
 import renderScreen from '../../utils/renderScreen';
 import { UserRole, UserStatePage } from '../../models/user.model';
 import getUser from '../../services/users/actions/getUser';
+import 'dotenv/config';
 
 const mainMenuScene = new Scenes.BaseScene<Scenes.SceneContext>('main_menu');
 
@@ -11,7 +12,8 @@ mainMenuScene.enter(async (ctx) => {
   const user = telegramId ? await getUser(String(telegramId)) : null;
   if (!user) {
     await ctx.reply('Ошибка: не удалось получить данные пользователя.');
-    return ctx.scene.enter('start');
+    await ctx.scene.enter('start');
+    return;
   }
 
   if (user.role === UserRole.USER) {
@@ -42,6 +44,11 @@ mainMenuScene.enter(async (ctx) => {
       user.state,
       mainMenuKeyboard
     );
+    return;
+  } else {
+    await ctx.reply('Нет доступа. Пожалуйста, авторизуйтесь.');
+    await ctx.scene.enter('start');
+    return;
   }
 });
 
