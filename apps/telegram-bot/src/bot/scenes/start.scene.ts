@@ -56,6 +56,7 @@ startScene.enter(async (ctx) => {
         state: {
           ...user.state,
           currentPage: UserStatePage.MAIN_MENU,
+          previousPage: UserStatePage.START,
         },
       });
       await ctx.scene.enter('main_menu');
