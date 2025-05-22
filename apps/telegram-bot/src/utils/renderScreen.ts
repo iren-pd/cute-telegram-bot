@@ -37,7 +37,11 @@ const renderScreen = async (
     return ctx.scene.enter('main_menu');
   }
 
-  await ctx.reply(message, keyboard);
+  if (keyboard) {
+    await ctx.reply(message, keyboard);
+  } else {
+    await ctx.reply(message);
+  }
   return;
 };
 
