@@ -44,7 +44,16 @@ mainMenuScene.enter(async (ctx) => {
       user.state,
       mainMenuKeyboard
     );
-    return;
+
+    mainMenuScene.hears('🍽️ Меню', async (ctx) => {
+      await ctx.reply('Выбрано "🍽️ Меню". Загружаю меню...');
+      await ctx.scene.enter('menu');
+    });
+
+    mainMenuScene.hears('🛒 Корзина', async (ctx) => {
+      await ctx.reply('Выбрано "🛒 Корзина". Открываю корзину...');
+      await ctx.scene.enter('cart');
+    });
   } else {
     await ctx.reply('Вы не милый котик, у вас нет доступа к этому боту.');
     await ctx.scene.enter('start');
