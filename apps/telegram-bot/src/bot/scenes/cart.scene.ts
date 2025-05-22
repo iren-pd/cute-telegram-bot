@@ -1,5 +1,5 @@
 import { Scenes } from 'telegraf';
-import cartKeyboard from '../keyboards/cartKeyboard';
+import cartKeyboard from '../keyboards/user/cartKeyboard';
 import renderScreen from '../../utils/renderScreen';
 import { UserStatePage, User } from '../../models/user.model';
 import getUser from '../../services/users/actions/getUser';

@@ -1,6 +1,6 @@
 import { Scenes } from 'telegraf';
 import { UserRole, UserStatePage, UserState } from '../models/user.model';
-import mainMenuKeyboard from '../bot/keyboards/mainMenuKeyboard';
+import mainMenuKeyboard from '../bot/keyboards/user/mainMenuKeyboard';
 
 /**
  * Универсальный рендеринг экрана с проверкой роли, стейта и маршрута.
