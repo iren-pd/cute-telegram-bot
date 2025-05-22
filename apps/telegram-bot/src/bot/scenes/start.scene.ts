@@ -4,6 +4,7 @@ import registerUser from '../../services/users/actions/registerUser';
 import updateUser from '../../services/users/actions/updateUser';
 import getUser from '../../services/users/actions/getUser';
 import { UserRole, UserStatePage } from '../../models/user.model';
+import { OrderPaymentStatus, OrderStatus } from '../../models/order.model';
 
 const startScene = new Scenes.BaseScene<Scenes.SceneContext>('start');
 
@@ -37,7 +38,8 @@ startScene.enter(async (ctx) => {
           userId: '',
           dishes: [],
           totalPrice: { kisses: 0, premium: 0 },
-          status: 'no-status',
+          status: OrderStatus.NO_STATUS,
+          paymentStatus: OrderPaymentStatus.NOT_APPLICABLE,
           payment: { kisses: 0, premium: 0 },
           createdAt: new Date().toISOString(),
         },

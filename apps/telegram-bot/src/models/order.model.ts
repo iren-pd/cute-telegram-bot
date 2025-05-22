@@ -1,6 +1,21 @@
 import { Dish } from './dish.model';
 
-export type OrderStatus = 'no-status' | 'new' | 'processing' | 'ready' | 'cancelled';
+export enum OrderStatus {
+  NO_STATUS = '📝 Ожидает оформления',
+  NEW = '🆕 Новый',
+  PROCESSING = '🔄 В обработке',
+  READY = '✅ Готов',
+  CANCELLED = '❌ Отменён',
+}
+
+export enum OrderPaymentStatus {
+  PENDING = '⏳ Ожидает оплаты',
+  PAID_KISSES = '😘 Оплачено поцелуйчиками',
+  PAID_PREMIUM = '💎 Оплачено премиум',
+  PAID_MIXED = '💞 Оплачено смешанно',
+  FAILED = '⚠️ Ошибка оплаты',
+  NOT_APPLICABLE = '❓ Выбери блюдо, чтобы оплатить',
+}
 
 export interface OrderDish {
   dish: Dish;
@@ -23,6 +38,7 @@ export interface Order {
   dishes: OrderDish[];
   totalPrice: OrderTotalPrice;
   status: OrderStatus;
+  paymentStatus: OrderPaymentStatus;
   comment?: string;
   payment: OrderPayment;
   createdAt: string;
