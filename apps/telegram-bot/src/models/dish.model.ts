@@ -1,23 +1,38 @@
+export enum DishOpinion {
+  EXCELLENT = '⭐️⭐️⭐️⭐️⭐️',
+  VERY_GOOD = '⭐️⭐️⭐️⭐️',
+  GOOD = '⭐️⭐️⭐️',
+  FAIR = '⭐️⭐️',
+  POOR = '⭐️',
+  BAD = '💩',
+}
+
 export interface Dish {
   id: string;
   photoUrl: string;
   name: string;
   description: string;
   cookingTime: number;
-  opinion: string;
+  opinion: DishOpinion;
   price: number;
-  ingredients?: string[];
-  category?: number;
-  isAvailable?: boolean;
-  createdAt?: Date;
+  category: number;
+  options?: string[];
+  createdAt: Date;
+}
+
+export enum DishCategoryName {
+  BREAKFAST = '🍳 Завтрак',
+  LUNCH = '🍲 Обед',
+  SALAD = '🥗 Салат',
+  DESSERT = '🍰 Сладенькое',
+  PREMIUM = '💎 Премиум',
 }
 
 export interface DishCategory {
   id: number;
-  name: string;
+  name: DishCategoryName;
   description?: string;
   createdAt: string;
   updatedAt?: string;
   dishes: Dish[];
 }
-
