@@ -25,6 +25,7 @@ export enum DishCategoryName {
   LUNCH = '🍲 Обед',
   SALAD = '🥗 Салат',
   DESSERT = '🍰 Сладенькое',
+  BEERDISH = '🍻 Пивная тарелка',
   PREMIUM = '💎 Премиум',
 }
 
