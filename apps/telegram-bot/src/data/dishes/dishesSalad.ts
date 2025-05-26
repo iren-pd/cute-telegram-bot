@@ -1,0 +1,56 @@
+import { Dish, DishOpinion } from '../../models/dish.model';
+
+export const dishesSalad: Dish[] = [
+  {
+    id: 'dish_3_1',
+    photoUrl: 'https://example.com/images/pasta.jpg',
+    name: '🥗 Салатик обычный',
+    description: '🍅 Помидорка и огурекс, куда же без них?',
+    cookingTime: 5,
+    opinion: DishOpinion.EXCELLENT,
+    price: 5,
+    category: 1,
+    options: [
+      '🥄 Добавить сметану',
+      '🫒 Добавить масло',
+      '🌿 Добавить зелень',
+      '🥕 Добавить редиску',
+      '🫑 Добавить перчик',
+    ],
+    createdAt: new Date(),
+  },
+  {
+    id: 'dish_3_2',
+    photoUrl: 'https://example.com/images/pasta.jpg',
+    name: '🥙 Греческий салат',
+    description:
+      '🫒 Я бы хотела чтоб он был прямо из Греции, но пока только из моей любви к тебе',
+    cookingTime: 5,
+    opinion: DishOpinion.VERY_GOOD,
+    price: 7,
+    category: 1,
+    createdAt: new Date(),
+  },
+  {
+    id: 'dish_3_3',
+    photoUrl: 'https://example.com/images/pasta.jpg',
+    name: '🥗 Цезарь',
+    description: '🌿 Классический салат Цезарь с курицей, сухариками и соусом',
+    cookingTime: 5,
+    opinion: DishOpinion.VERY_GOOD,
+    price: 7,
+    category: 1,
+    createdAt: new Date(),
+  },
+  {
+    id: 'dish_3_4',
+    photoUrl: 'https://example.com/images/pasta.jpg',
+    name: '🥙 Оливьешечка',
+    description: '🤤 Новогодняя классика от которой я тащусь',
+    cookingTime: 5,
+    opinion: DishOpinion.EXCELLENT,
+    price: 7,
+    category: 1,
+    createdAt: new Date(),
+  },
+];
