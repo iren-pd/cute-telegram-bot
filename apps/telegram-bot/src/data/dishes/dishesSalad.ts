@@ -37,7 +37,7 @@ export const dishesSalad: Dish[] = [
     name: '🥗 Цезарь',
     description: '🌿 Классический салат Цезарь с курицей, сухариками и соусом',
     cookingTime: 5,
-    opinion: DishOpinion.VERY_GOOD,
+    opinion: DishOpinion.GOOD,
     price: 7,
     category: 1,
     createdAt: new Date(),
