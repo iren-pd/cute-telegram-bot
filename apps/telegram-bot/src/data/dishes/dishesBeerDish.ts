@@ -3,7 +3,7 @@ import { Dish, DishOpinion } from '../../models/dish.model';
 export const dishesBeerDish: Dish[] = [
   {
     id: 'dish_4_1',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🧀 Сыр сулугуни',
     description: '🧀 Традиционный грузинский сыр, идеально подходит к пиву',
     cookingTime: 0,
@@ -14,7 +14,7 @@ export const dishesBeerDish: Dish[] = [
   },
   {
     id: 'dish_4_2',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🧀 Ассорти из сыров',
     description: '🧀 Ассорти из различных сыров, отличная закуска к пиву',
     cookingTime: 0,
@@ -26,7 +26,7 @@ export const dishesBeerDish: Dish[] = [
   },
   {
     id: 'dish_4_3',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🍖 Кабаносы',
     description: '🍖 Копченые колбаски, отличная закуска к пиву',
     cookingTime: 0,
@@ -37,7 +37,7 @@ export const dishesBeerDish: Dish[] = [
   },
   {
     id: 'dish_4_4',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🍟 Чипсы',
     description: '🍟 Хрустящие чипсы с различными вкусами',
     cookingTime: 0,
@@ -48,7 +48,7 @@ export const dishesBeerDish: Dish[] = [
   },
   {
     id: 'dish_4_5',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🍟 Пелеты',
     description: '🍟 Хрустящие пелеты, отличная закуска к пиву',
     cookingTime: 0,
@@ -59,7 +59,7 @@ export const dishesBeerDish: Dish[] = [
   },
   {
     id: 'dish_4_6',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🍗 Курица сушеная',
     description: '🍗 Сушеная курица с насыщенным вкусом и ароматом',
     cookingTime: 0,
@@ -70,7 +70,7 @@ export const dishesBeerDish: Dish[] = [
   },
   {
     id: 'dish_4_7',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🐟 Таранка',
     description: '🐟 Сушеная рыба, отличная закуска к пиву',
     cookingTime: 0,
@@ -81,7 +81,7 @@ export const dishesBeerDish: Dish[] = [
   },
   {
     id: 'dish_4_8',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🐟 Путасу',
     description: '🐟 Сушеная путасу с насыщенным вкусом и ароматом',
     cookingTime: 0,
@@ -92,7 +92,7 @@ export const dishesBeerDish: Dish[] = [
   },
   {
     id: 'dish_4_9',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🥖 Сухарики',
     description: '🥖 Сухарики с различными вкусами, отличная закуска к пиву',
     cookingTime: 0,
@@ -104,7 +104,7 @@ export const dishesBeerDish: Dish[] = [
   },
   {
     id: 'dish_4_10',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🥜 Орехи',
     description: '🥜 Смесь орехов, идеально подходит к пиву',
     cookingTime: 0,
@@ -116,7 +116,7 @@ export const dishesBeerDish: Dish[] = [
   },
   {
     id: 'dish_4_11',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🦑 Кольца кальмара',
     description: '🦑 Кольца кальмара, отличная закуска к пиву',
     cookingTime: 0,
@@ -127,7 +127,7 @@ export const dishesBeerDish: Dish[] = [
   },
   {
     id: 'dish_4_12',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🦑 Перуанский кальмар',
     description: '🦑 Перуанский кальмар, идеально подходит к пиву',
     cookingTime: 0,

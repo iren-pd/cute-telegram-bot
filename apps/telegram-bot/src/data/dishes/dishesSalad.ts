@@ -3,7 +3,7 @@ import { Dish, DishOpinion } from '../../models/dish.model';
 export const dishesSalad: Dish[] = [
   {
     id: 'dish_3_1',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🥗 Салатик обычный',
     description: '🍅 Помидорка и огурекс, куда же без них?',
     cookingTime: 5,
@@ -21,7 +21,7 @@ export const dishesSalad: Dish[] = [
   },
   {
     id: 'dish_3_2',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🥙 Греческий салат',
     description:
       '🫒 Я бы хотела чтоб он был прямо из Греции, но пока только из моей любви к тебе',
@@ -33,7 +33,7 @@ export const dishesSalad: Dish[] = [
   },
   {
     id: 'dish_3_3',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🥗 Цезарь',
     description: '🌿 Классический салат Цезарь с курицей, сухариками и соусом',
     cookingTime: 5,
@@ -44,7 +44,7 @@ export const dishesSalad: Dish[] = [
   },
   {
     id: 'dish_3_4',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🥙 Оливьешечка',
     description: '🤤 Новогодняя классика от которой я тащусь',
     cookingTime: 5,

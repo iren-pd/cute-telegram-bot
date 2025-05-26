@@ -9,7 +9,7 @@ export enum DishOpinion {
 
 export interface Dish {
   id: string;
-  photoUrl: string;
+  photoSrc: string;
   name: string;
   description: string;
   cookingTime: number;

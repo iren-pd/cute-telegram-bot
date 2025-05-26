@@ -3,7 +3,7 @@ import { Dish, DishOpinion } from "../../models/dish.model";
 export const dishesBreakfast: Dish[] = [
   {
     id: 'dish_1_1',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🍳 Омлетик',
     description: '🥚 Нежный и воздушный омлет с начинкой на выбор',
     cookingTime: 15,
@@ -15,7 +15,7 @@ export const dishesBreakfast: Dish[] = [
   },
   {
     id: 'dish_1_2',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🍳 Жаренные яички',
     description:
       '🥚 Классические жареные яйца с хрустящей корочкой и прожаренным желтком',
@@ -28,7 +28,7 @@ export const dishesBreakfast: Dish[] = [
   },
   {
     id: 'dish_1_3',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🍞 Вкусные тосты поджаренные на сливочном масле',
     description:
       '🧈 Золотистые тосты с хрустящей корочкой и насыщенным сливочным вкусом',
@@ -46,7 +46,7 @@ export const dishesBreakfast: Dish[] = [
   },
   {
     id: 'dish_1_4',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🥚 Яичный рулет',
     description: '🍳 Нежный рулетик из яиц с начинкой, который тает во рту',
     cookingTime: 30,
@@ -62,7 +62,7 @@ export const dishesBreakfast: Dish[] = [
   },
   {
     id: 'dish_1_5',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🌯 Лавашики',
     description:
       '🥪 Свежий лаваш с яичком, балыком, сыром и сочными помидорками',
@@ -75,7 +75,7 @@ export const dishesBreakfast: Dish[] = [
   },
   {
     id: 'dish_1_6',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🥪 Горячие бутербродики',
     description:
       '🥪 Запеченные бутерброды с расплавленным сыром и ароматным балыком',
@@ -93,7 +93,7 @@ export const dishesBreakfast: Dish[] = [
   },
   {
     id: 'dish_1_7',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🌯 Лавашики',
     description:
       '🥪 Свежий лаваш с яичком, балыком, сыром и сочными помидорками',
@@ -106,7 +106,7 @@ export const dishesBreakfast: Dish[] = [
   },
   {
     id: 'dish_1_8',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🍜 Мивинка',
     description:
       '🦐 Азиатская лапша с креветками, соевым соусом, пастой том ям, лимоном и кунжутом',
@@ -124,7 +124,7 @@ export const dishesBreakfast: Dish[] = [
   },
   {
     id: 'dish_1_9',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🥣 Классическая овсянка',
     description: '🌾 Питательная овсяная каша с различными добавками на выбор',
     cookingTime: 20,
@@ -142,7 +142,7 @@ export const dishesBreakfast: Dish[] = [
   },
   {
     id: 'dish_1_10',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🍙 Онигири',
     description: '🌟 Лучшее что ты когда-либо ел!',
     cookingTime: 30,
@@ -153,7 +153,7 @@ export const dishesBreakfast: Dish[] = [
   },
   {
     id: 'dish_1_11',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: 'Творожок',
     description: '🥄 Полезный творог с фруктами/ягодами/орехами и медом',
     cookingTime: 15,
@@ -172,7 +172,7 @@ export const dishesBreakfast: Dish[] = [
   },
   {
     id: 'dish_1_12',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🥟 Ленивые варенички',
     description: '🧀 Нежные творожные варенички с различными добавками',
     cookingTime: 30,
@@ -188,7 +188,7 @@ export const dishesBreakfast: Dish[] = [
   },
   {
     id: 'dish_1_13',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🧀 Сырнички',
     description: '🍯 Воздушные сырники с хрустящей корочкой и нежной начинкой',
     cookingTime: 45,
@@ -205,7 +205,7 @@ export const dishesBreakfast: Dish[] = [
   },
   {
     id: 'dish_1_14',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🥞 Блинчики',
     description: '🥞 Тонкие блинчики с различными начинками и соусами',
     cookingTime: 60,
@@ -221,7 +221,7 @@ export const dishesBreakfast: Dish[] = [
   },
   {
     id: 'dish_1_15',
-    photoUrl: 'https://example.com/images/pasta.jpg',
+    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🥪 Французский тост',
     description: '🥞 Классический французский тост с карамельной корочкой',
     cookingTime: 15,
