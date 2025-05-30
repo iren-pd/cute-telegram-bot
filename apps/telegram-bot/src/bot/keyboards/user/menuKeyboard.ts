@@ -1,13 +1,6 @@
 import { Markup } from 'telegraf';
 import getCategories from '../../../services/category/getCategories';
-
-function chunkArray<T>(arr: T[], size: number): T[][] {
-  const result: T[][] = [];
-  for (let i = 0; i < arr.length; i += size) {
-    result.push(arr.slice(i, i + size));
-  }
-  return result;
-}
+import { chunkArray } from '../../../utils/chunkArray';
 
 export async function getMenuInlineKeyboard() {
   const categories = await getCategories();
