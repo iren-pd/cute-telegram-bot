@@ -13,33 +13,37 @@ menuScene.enter(async (ctx) => {
   const user = await getUser(String(telegramId));
   if (!user) return ctx.scene.enter('start');
 
-  await updateUser(String(telegramId), {
-    state: {
-      ...user.state,
-      previousPage: user.state.currentPage,
-      currentPage: UserStatePage.MENU,
-    },
-  });
+  if (user.role === UserRole.USER) {
+    await updateUser(String(telegramId), {
+      state: {
+        ...user.state,
+        previousPage: user.state.currentPage,
+        currentPage: UserStatePage.MENU,
+      },
+    });
 
-  const menuKeyboard = await getMenuInlineKeyboard();
+    const menuKeyboard = await getMenuInlineKeyboard();
 
-  await updateUser(String(telegramId), {
-    state: {
-      ...user.state,
-      previousPage: user.state.currentPage,
-      currentPage: UserStatePage.MENU,
-    },
-  });
-  const updatedUser = await getUser(String(telegramId));
+    await updateUser(String(telegramId), {
+      state: {
+        ...user.state,
+        previousPage: user.state.currentPage,
+        currentPage: UserStatePage.MENU,
+      },
+    });
+    const updatedUser = await getUser(String(telegramId));
 
-  await renderScreen(
-    ctx,
-    'Для начала выбери категорию:',
-    updatedUser?.role || UserRole.USER,
-    UserStatePage.MENU,
-    updatedUser?.state as UserState,
-    menuKeyboard
-  );
+    await renderScreen(
+      ctx,
+      'Для начала выбери категорию:',
+      updatedUser?.role || UserRole.USER,
+      UserStatePage.MENU,
+      updatedUser?.state as UserState,
+      menuKeyboard
+    );
+
+    return;
+  }
 
   return;
 });
