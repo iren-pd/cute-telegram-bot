@@ -19,7 +19,8 @@ export enum OrderPaymentStatus {
 
 export interface OrderDish {
   dish: Dish;
-  quantity: number;
+  selectedOptions: string[] | undefined;
+  quantity: number; 
 }
 
 export interface OrderPayment {

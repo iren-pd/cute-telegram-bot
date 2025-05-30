@@ -6,6 +6,8 @@ import updateUser from '../../services/users/actions/updateUser';
 import renderScreen from '../../utils/renderScreen';
 import { addToCart } from '../../services/dish/addToCart';
 import { getDishKeyboard } from '../keyboards/user/dishKeyboard';
+import { Markup } from 'telegraf';
+import { chunkArray } from '../../utils/chunkArray';
 
 const dishScene = new Scenes.BaseScene<Scenes.SceneContext>('dish_');
 
@@ -35,11 +37,11 @@ dishScene.enter(async (ctx) => {
     }
 
     const messageText = `
-${dish.name} \n
+${dish.name}
 ${dish.description}
 
 ⏱ Время приготовления: ${dish.cookingTime} мин
-${dish.opinion}
+🧑‍🍳 Мое мнение: ${dish.opinion}
 💰 Цена: ${dish.price} ${dish.currency}
 `;
 
@@ -75,8 +77,61 @@ ${dish.opinion}
 });
 
 dishScene.action(/option_(.+)/, async (ctx) => {
-  const option = ctx.match[1];
-  await ctx.answerCbQuery(`Выбрана опция: ${option}`);
+  const optionValue = ctx.match[1];
+  const dishId = (ctx.scene.state as { dishId?: string }).dishId;
+  const telegramId = ctx.from?.id;
+  if (!telegramId || !dishId) return;
+
+  const dish = allDishes.find((d) => d.id === dishId);
+  if (!dish || !dish.options) return;
+
+  const state = ctx.scene.state as { selectedOptions?: string[] };
+  state.selectedOptions = state.selectedOptions || [];
+  if (!state.selectedOptions.includes(optionValue)) {
+    state.selectedOptions.push(optionValue);
+  }
+
+  let messageText = `
+${dish.name}
+${dish.description}
+
+⏱ Время приготовления: ${dish.cookingTime} мин
+🧑‍🍳 Мое мнение: ${dish.opinion}
+💰 Цена: ${dish.price} ${dish.currency}`;
+
+  if (state.selectedOptions.length) {
+    messageText += `\nДобавлено: ${state.selectedOptions.join(', ')}`;
+  }
+
+  const remainingOptions = dish.options.filter(
+    (option) => !state.selectedOptions!.includes(option)
+  );
+  const optionButtons = remainingOptions.map((option) =>
+    Markup.button.callback(option, `option_${option}`)
+  );
+  const keyboardArr = chunkArray(optionButtons, 2);
+  keyboardArr.push([
+    Markup.button.callback('🛒 Добавить в заказ', `add_to_cart_${dish.id}`),
+  ]);
+  keyboardArr.push([
+    Markup.button.callback('⬅️ Назад', 'back'),
+    Markup.button.callback('🛒 Корзина', 'cart'),
+  ]);
+  const keyboard = Markup.inlineKeyboard(keyboardArr);
+
+  try {
+    await ctx.editMessageText(messageText, {
+      parse_mode: 'HTML',
+      ...keyboard,
+    });
+  } catch (e) {
+    await ctx.reply(messageText, {
+      parse_mode: 'HTML',
+      ...keyboard,
+    });
+  }
+
+  await ctx.answerCbQuery(`Добавлено: ${optionValue}`);
 });
 
 dishScene.action(/add_to_cart_(.+)/, async (ctx) => {
@@ -94,11 +149,11 @@ dishScene.action(/add_to_cart_(.+)/, async (ctx) => {
     return;
   }
 
-  try {
-    const selectedOption = (ctx.scene.state as { selectedOption?: string })
-      .selectedOption;
+  const selectedOptions = (ctx.scene.state as { selectedOptions?: string[] })
+    .selectedOptions;
 
-    await addToCart(String(telegramId), dish, selectedOption);
+  try {
+    await addToCart(String(telegramId), dish, selectedOptions);
     await ctx.answerCbQuery('✅ Блюдо добавлено в корзину');
   } catch (error) {
     console.error('Error adding to cart:', error);

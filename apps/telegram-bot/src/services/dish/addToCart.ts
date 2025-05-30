@@ -10,7 +10,7 @@ import updateUser from '../users/actions/updateUser';
 export async function addToCart(
   userId: string,
   dish: Dish,
-  selectedOption?: string
+  selectedOption?: string[]
 ): Promise<void> {
   const user = await getUser(userId);
   if (!user) return;
@@ -34,7 +34,10 @@ export async function addToCart(
     currentCart.dishes[existingDishIndex].quantity += 1;
   } else {
     const orderDish: OrderDish = {
-      dish: dish,
+      dish: {
+        ...dish,
+      },
+      selectedOptions: selectedOption ? selectedOption : undefined,
       quantity: 1,
     };
     currentCart.dishes.push(orderDish);
