@@ -4,11 +4,13 @@ import mainMenuScene from './main_menu.scene';
 import 'dotenv/config';
 import cartScene from './cart.scene';
 import menuScene from './menu.scene';
+import categoryScene from './category.scene';
 
 const stage = new Scenes.Stage([
   startScene,
   mainMenuScene,
   cartScene,
   menuScene,
+  categoryScene
 ]);
 export default stage;
