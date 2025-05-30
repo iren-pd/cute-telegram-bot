@@ -2,8 +2,8 @@ import { Dish, DishOpinion } from '../../models/dish.model';
 
 export const dishesLunch: Dish[] = [
   {
-    id: 'dish_2_1',
-    photoSrc: 'src/assets/dishesLunch/dish_2_1.jpg',
+    id: '2_1',
+    photoSrc: 'src/assets/dishesLunch/2_1.jpg',
     name: '🍲 Борщ',
     description: '🥘 Наваристый украинский борщ с пампушками',
     cookingTime: 90,
@@ -18,8 +18,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_2',
-    photoSrc: 'src/assets/dishesLunch/dish_2_2.jpg',
+    id: '2_2',
+    photoSrc: 'src/assets/dishesLunch/2_2.jpg',
     name: '🍲 Солянка',
     description: '🥘 Наваристая мясная солянка с лимоном и маслинами',
     cookingTime: 90,
@@ -34,8 +34,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_3',
-    photoSrc: 'src/assets/dishesLunch/dish_2_3.jpg',
+    id: '2_3',
+    photoSrc: 'src/assets/dishesLunch/2_3.jpg',
     name: '🍜 Том ям',
     description:
       '🌶️ Острый тайский суп с креветками, грибами и кокосовым молоком',
@@ -47,8 +47,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_4',
-    photoSrc: 'src/assets/dishesLunch/dish_2_4.jpg',
+    id: '2_4',
+    photoSrc: 'src/assets/dishesLunch/2_4.jpg',
     name: '🥣 Суп-пюре',
     description: '🥄 Нежный суп-пюре если очень хочется или после стоматолога',
     cookingTime: 90,
@@ -63,8 +63,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_5',
-    photoSrc: 'src/assets/dishesLunch/dish_2_5.jpg',
+    id: '2_5',
+    photoSrc: 'src/assets/dishesLunch/2_5.jpg',
     name: '🍲 Окрошечка',
     description: '🥘 Прекрасно охлаждающий супчик для лета',
     cookingTime: 60,
@@ -75,8 +75,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_6',
-    photoSrc: 'src/assets/dishesLunch/dish_2_6.jpg',
+    id: '2_6',
+    photoSrc: 'src/assets/dishesLunch/2_6.jpg',
     name: '🥘 Свекольник',
     description: '�� Освежающий свекольник с яйцом, огурцом и сметаной',
     cookingTime: 60,
@@ -86,8 +86,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_7',
-    photoSrc: 'src/assets/dishesLunch/dish_2_7.jpg',
+    id: '2_7',
+    photoSrc: 'src/assets/dishesLunch/2_7.jpg',
     name: '🍲 Лагман',
     description:
       '🥘 Наваристый лагман с лапшой, мясом и овощами в ароматном бульоне',
@@ -99,8 +99,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_8',
-    photoSrc: 'src/assets/dishesLunch/dish_2_8.jpg',
+    id: '2_8',
+    photoSrc: 'src/assets/dishesLunch/2_8.jpg',
     name: '🍲 Рагу',
     description: '🥘 Ароматное рагу из мяса и овощей в густом соусе',
     cookingTime: 90,
@@ -111,8 +111,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_9',
-    photoSrc: 'src/assets/dishesLunch/dish_2_9.jpg',
+    id: '2_9',
+    photoSrc: 'src/assets/dishesLunch/2_9.jpg',
     name: '🍚 Плов',
     description: '🍖 Я конечно не пловный эксперт, но можно попробовать',
     cookingTime: 90,
@@ -122,8 +122,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_10',
-    photoSrc: 'src/assets/dishesLunch/dish_2_10.jpg',
+    id: '2_10',
+    photoSrc: 'src/assets/dishesLunch/2_10.jpg',
     name: '🍚 Ризотто',
     description: '🥘 Рис с овощами, но итальянский (наверное)',
     cookingTime: 40,
@@ -133,8 +133,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_11',
-    photoSrc: 'src/assets/dishesLunch/dish_2_11.jpg',
+    id: '2_11',
+    photoSrc: 'src/assets/dishesLunch/2_11.jpg',
     name: '🍝 Карбонара',
     description: '🧀 Классическая паста карбонара с беконом и сливочным соусом',
     cookingTime: 30,
@@ -144,8 +144,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_12',
-    photoSrc: 'src/assets/dishesLunch/dish_2_12.jpg',
+    id: '2_12',
+    photoSrc: 'src/assets/dishesLunch/2_12.jpg',
     name: '🍝 Паста с морепродуктами',
     description: '🦐 Паста с морским коктейлем в сливочном соусе',
     cookingTime: 40,
@@ -162,8 +162,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_13',
-    photoSrc: 'src/assets/dishesLunch/dish_2_13.jpg',
+    id: '2_13',
+    photoSrc: 'src/assets/dishesLunch/2_13.jpg',
     name: '🍝 Лазанья',
     description: '🧀 Классическая итальянская лазанья с мясным соусом и сыром',
     cookingTime: 60,
@@ -174,8 +174,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_14',
-    photoSrc: 'src/assets/dishesLunch/dish_2_14.jpg',
+    id: '2_14',
+    photoSrc: 'src/assets/dishesLunch/2_14.jpg',
     name: '🥘 Гратен',
     description:
       '🧀 Типо запеканка с картошечкой, мяском, грибами и помидоркой заправленная сыром',
@@ -187,8 +187,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_15',
-    photoSrc: 'src/assets/dishesLunch/dish_2_15.jpg',
+    id: '2_15',
+    photoSrc: 'src/assets/dishesLunch/2_15.jpg',
     name: '🥩 Отбивные',
     description: '🍖 Отбивные сытные и вкусные, но отбивать их будешь ты',
     cookingTime: 40,
@@ -199,8 +199,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_16',
-    photoSrc: 'src/assets/dishesLunch/dish_2_16.jpg',
+    id: '2_16',
+    photoSrc: 'src/assets/dishesLunch/2_16.jpg',
     name: '🥩 Мясные рулетики',
     description:
       '🧀 Это куринные отбивные, но в них закручена начинка из сыра и зелени и готовятся в сливочном соусе',
@@ -211,8 +211,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_17',
-    photoSrc: 'src/assets/dishesLunch/dish_2_17.jpg',
+    id: '2_17',
+    photoSrc: 'src/assets/dishesLunch/2_17.jpg',
     name: '🥩 Котлетки',
     description: '😰 Боже спаси меня от этих котлет',
     cookingTime: 40,
@@ -223,8 +223,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_18',
-    photoSrc: 'src/assets/dishesLunch/dish_2_18.jpg',
+    id: '2_18',
+    photoSrc: 'src/assets/dishesLunch/2_18.jpg',
     name: '🥩 Гнезда',
     description: '🍖 Мясные гнезда с грибной начинкой и сырной шапочкой',
     cookingTime: 40,
@@ -235,8 +235,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_19',
-    photoSrc: 'src/assets/dishesLunch/dish_2_19.jpg',
+    id: '2_19',
+    photoSrc: 'src/assets/dishesLunch/2_19.jpg',
     name: '🥩 Тефтельки',
     description: '🍖 Тефтельки во вкусном соусе моей любви',
     cookingTime: 40,
@@ -247,8 +247,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_20',
-    photoSrc: 'src/assets/dishesLunch/dish_2_20.jpg',
+    id: '2_20',
+    photoSrc: 'src/assets/dishesLunch/2_20.jpg',
     name: '🥩 Шашлычки',
     description:
       '🍖 Конечно не на костре, но в духовке тоже норм (маринуешь конечно же ты)',
@@ -260,8 +260,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_21',
-    photoSrc: 'src/assets/dishesLunch/dish_2_21.jpg',
+    id: '2_21',
+    photoSrc: 'src/assets/dishesLunch/2_21.jpg',
     name: '🥩 Стейки',
     description:
       '🍖 Наверное мы их купим, потому что я не умею их мариновать ((',
@@ -272,8 +272,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_22',
-    photoSrc: 'src/assets/dishesLunch/dish_2_22.jpg',
+    id: '2_22',
+    photoSrc: 'src/assets/dishesLunch/2_22.jpg',
     name: '🍖 Ребрышки',
     description: '🍖 Сочные ребрышки в ароматном соусе',
     cookingTime: 40,
@@ -284,8 +284,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_23',
-    photoSrc: 'src/assets/dishesLunch/dish_2_23.jpg',
+    id: '2_23',
+    photoSrc: 'src/assets/dishesLunch/2_23.jpg',
     name: '🍜 Удон',
     description:
       '🍖 Удон с курочкой, который напомнит тебе о так как сильно я тебя люблю',
@@ -296,8 +296,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_24',
-    photoSrc: 'src/assets/dishesLunch/dish_2_24.jpg',
+    id: '2_24',
+    photoSrc: 'src/assets/dishesLunch/2_24.jpg',
     name: '🍔 Бургеры',
     description: '🍖 Сочные бургеры с домашней котлетой и свежими овощами',
     cookingTime: 20,
@@ -307,8 +307,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_25',
-    photoSrc: 'src/assets/dishesLunch/dish_2_25.jpg',
+    id: '2_25',
+    photoSrc: 'src/assets/dishesLunch/2_25.jpg',
     name: '🥖 Хачапури',
     description: '🍖 Классическое грузинское хачапури с сыром и яйцом',
     cookingTime: 90,
@@ -318,8 +318,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_26',
-    photoSrc: 'src/assets/dishesLunch/dish_2_26.jpg',
+    id: '2_26',
+    photoSrc: 'src/assets/dishesLunch/2_26.jpg',
     name: '🍕 Пицца',
     description: '💞 Домашняя пицца с различными начинками в форме сердечка',
     cookingTime: 60,
@@ -335,8 +335,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_27',
-    photoSrc: 'src/assets/dishesLunch/dish_2_27.jpg',
+    id: '2_27',
+    photoSrc: 'src/assets/dishesLunch/2_27.jpg',
     name: '🐟 Запеченная рыбка',
     description: '🍖 А вдруг захочешь?',
     cookingTime: 30,
@@ -347,8 +347,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_28',
-    photoSrc: 'src/assets/dishesLunch/dish_2_28.jpg',
+    id: '2_28',
+    photoSrc: 'src/assets/dishesLunch/2_28.jpg',
     name: '🍗 Курочка в соусе',
     description: '🍖 Нежная курица в ароматном соусе с грибами',
     cookingTime: 50,
@@ -359,8 +359,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_29',
-    photoSrc: 'src/assets/dishesLunch/dish_2_29.jpg',
+    id: '2_29',
+    photoSrc: 'src/assets/dishesLunch/2_29.jpg',
     name: '🍖 Гуляш',
     description: '�� Сочный гуляш из говядины в густом соусе',
     cookingTime: 60,
@@ -370,8 +370,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_30',
-    photoSrc: 'src/assets/dishesLunch/dish_2_30.jpg',
+    id: '2_30',
+    photoSrc: 'src/assets/dishesLunch/2_30.jpg',
     name: '🌭 Колбаски',
     description: '🍖 Ароматные колбаски с различными видами мяса и специями',
     cookingTime: 60,
@@ -382,8 +382,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_31',
-    photoSrc: 'src/assets/dishesLunch/dish_2_31.jpg',
+    id: '2_31',
+    photoSrc: 'src/assets/dishesLunch/2_31.jpg',
     name: '🥟 Пельмени',
     description: '🍖 Классические пельмени с мясной начинкой',
     cookingTime: 30,
@@ -394,8 +394,8 @@ export const dishesLunch: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_2_32',
-    photoSrc: 'src/assets/dishesLunch/dish_2_32.jpg',
+    id: '2_32',
+    photoSrc: 'src/assets/dishesLunch/2_32.jpg',
     name: '🥟 Вареники',
     description: '🍖 Традиционные вареники с различными начинками',
     cookingTime: 30,

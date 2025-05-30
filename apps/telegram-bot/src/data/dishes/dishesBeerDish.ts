@@ -2,8 +2,8 @@ import { Dish, DishOpinion } from '../../models/dish.model';
 
 export const dishesBeerDish: Dish[] = [
   {
-    id: 'dish_4_1',
-    photoSrc: 'src/assets/dishesBeerDish/dish_4_1.jpg',
+    id: '4_1',
+    photoSrc: 'src/assets/dishesBeerDish/4_1.jpg',
     name: '🧀 Сыр сулугуни',
     description: '🧀 Традиционный грузинский сыр, идеально подходит к пиву',
     cookingTime: 0,
@@ -13,8 +13,8 @@ export const dishesBeerDish: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_4_2',
-    photoSrc: 'src/assets/dishesBeerDish/dish_4_2.jpg',
+    id: '4_2',
+    photoSrc: 'src/assets/dishesBeerDish/4_2.jpg',
     name: '🧀 Ассорти из сыров',
     description: '🧀 Ассорти из различных сыров, отличная закуска к пиву',
     cookingTime: 0,
@@ -25,8 +25,8 @@ export const dishesBeerDish: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_4_3',
-    photoSrc: 'src/assets/dishesBeerDish/dish_4_3.jpg',
+    id: '4_3',
+    photoSrc: 'src/assets/dishesBeerDish/4_3.jpg',
     name: '🍖 Кабаносы',
     description: '🍖 Копченые колбаски, отличная закуска к пиву',
     cookingTime: 0,
@@ -36,8 +36,8 @@ export const dishesBeerDish: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_4_4',
-    photoSrc: 'src/assets/dishesBeerDish/dish_4_4.jpg',
+    id: '4_4',
+    photoSrc: 'src/assets/dishesBeerDish/4_4.jpg',
     name: '🍟 Чипсы',
     description: '🍟 Хрустящие чипсы с различными вкусами',
     cookingTime: 0,
@@ -47,8 +47,8 @@ export const dishesBeerDish: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_4_5',
-    photoSrc: 'src/assets/dishesBeerDish/dish_4_5.jpg',
+    id: '4_5',
+    photoSrc: 'src/assets/dishesBeerDish/4_5.jpg',
     name: '🍟 Пелеты',
     description: '🍟 Хрустящие пелеты, отличная закуска к пиву',
     cookingTime: 0,
@@ -59,8 +59,8 @@ export const dishesBeerDish: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_4_6',
-    photoSrc: 'src/assets/dishesBeerDish/dish_4_6.jpg',
+    id: '4_6',
+    photoSrc: 'src/assets/dishesBeerDish/4_6.jpg',
     name: '🍗 Курица вяленая',
     description: '🍗 Вяленая курица с насыщенным вкусом и ароматом',
     cookingTime: 0,
@@ -70,8 +70,8 @@ export const dishesBeerDish: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_4_7',
-    photoSrc: 'src/assets/dishesBeerDish/dish_4_7.jpg',
+    id: '4_7',
+    photoSrc: 'src/assets/dishesBeerDish/4_7.jpg',
     name: '🐟 Таранка',
     description: '🐟 Сушеная рыба, отличная закуска к пиву',
     cookingTime: 0,
@@ -81,8 +81,8 @@ export const dishesBeerDish: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_4_8',
-    photoSrc: 'src/assets/dishesBeerDish/dish_4_8.jpg',
+    id: '4_8',
+    photoSrc: 'src/assets/dishesBeerDish/4_8.jpg',
     name: '🐟 Путасу',
     description: '🐟 Сушеная путасу с насыщенным вкусом и ароматом',
     cookingTime: 0,
@@ -92,8 +92,8 @@ export const dishesBeerDish: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_4_9',
-    photoSrc: 'src/assets/dishesBeerDish/dish_4_9.jpg',
+    id: '4_9',
+    photoSrc: 'src/assets/dishesBeerDish/4_9.jpg',
     name: '🥖 Сухарики',
     description: '🥖 Сухарики с различными вкусами, отличная закуска к пиву',
     cookingTime: 0,
@@ -104,8 +104,8 @@ export const dishesBeerDish: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_4_10',
-    photoSrc: 'src/assets/dishesBeerDish/dish_4_10.jpg',
+    id: '4_10',
+    photoSrc: 'src/assets/dishesBeerDish/4_10.jpg',
     name: '🥜 Орехи',
     description: '🥜 Смесь орехов, идеально подходит к пиву',
     cookingTime: 0,
@@ -116,8 +116,8 @@ export const dishesBeerDish: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_4_11',
-    photoSrc: 'src/assets/dishesBeerDish/dish_4_11.jpg',
+    id: '4_11',
+    photoSrc: 'src/assets/dishesBeerDish/4_11.jpg',
     name: '🦑 Кальмар',
     description: '🦑 Кальмар, отличная закуска к пиву',
     cookingTime: 0,

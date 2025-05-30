@@ -2,7 +2,7 @@ import { Dish, DishOpinion } from '../../models/dish.model';
 
 export const dishesDessert: Dish[] = [
   {
-    id: 'dish_4_1',
+    id: '4_1',
     photoSrc: 'example',
     name: 'Черничный чизкейк',
     description: 'Основа из песочного печенья с нежнейшй начинкой',
@@ -14,7 +14,7 @@ export const dishesDessert: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_4_2',
+    id: '4_2',
     photoSrc: 'example',
     name: 'Киндер милк слайс',
     description: 'Почти как у киндера, только лучше и больше',
@@ -25,7 +25,7 @@ export const dishesDessert: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_4_3',
+    id: '4_3',
     photoSrc: 'example',
     name: 'Наполеон',
     description: 'Неизменная классика моей любви к тебе',
@@ -36,7 +36,7 @@ export const dishesDessert: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_4_4',
+    id: '4_4',
     photoSrc: 'example',
     name: 'Синабон',
     description: 'Та самая булочка с корицей и такая же сладкая, как ты',
@@ -47,7 +47,7 @@ export const dishesDessert: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: 'dish_4_5',
+    id: '4_5',
     photoSrc: 'example',
     name: 'Печеньки',
     description: 'Та самая булочка с корицей и такая же сладкая, как ты',
