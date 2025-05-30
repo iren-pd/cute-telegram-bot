@@ -19,6 +19,7 @@ export enum UserStatePage {
   CART = 'cart',
   MENU = 'menu',
   CATEGORY = 'category',
+  DISH = 'dish'
 }
 
 export interface UserState {
