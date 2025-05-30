@@ -9,7 +9,7 @@ export const dishesSalad: Dish[] = [
     cookingTime: 5,
     opinion: DishOpinion.EXCELLENT,
     price: 5,
-    category: 1,
+    category: 3,
     options: [
       '🥄 Добавить сметану',
       '🫒 Добавить масло',
@@ -28,7 +28,7 @@ export const dishesSalad: Dish[] = [
     cookingTime: 5,
     opinion: DishOpinion.VERY_GOOD,
     price: 7,
-    category: 1,
+    category: 3,
     createdAt: new Date(),
   },
   {
@@ -39,7 +39,7 @@ export const dishesSalad: Dish[] = [
     cookingTime: 5,
     opinion: DishOpinion.GOOD,
     price: 7,
-    category: 1,
+    category: 3,
     createdAt: new Date(),
   },
   {
@@ -50,7 +50,7 @@ export const dishesSalad: Dish[] = [
     cookingTime: 5,
     opinion: DishOpinion.EXCELLENT,
     price: 7,
-    category: 1,
+    category: 3,
     createdAt: new Date(),
   },
 ];
