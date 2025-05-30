@@ -34,7 +34,8 @@ const renderScreen = async (
 
   if (state.currentPage !== route) {
     await ctx.reply('Вы были перемещены в главное меню.', mainMenuKeyboard);
-    return ctx.scene.enter('main_menu');
+    ctx.scene.enter('main_menu');
+    return;
   }
 
   if (keyboard) {
