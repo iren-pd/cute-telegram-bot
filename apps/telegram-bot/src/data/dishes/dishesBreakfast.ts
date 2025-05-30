@@ -1,4 +1,4 @@
-import { Dish, DishOpinion } from "../../models/dish.model";
+import { Currency, Dish, DishOpinion } from "../../models/dish.model";
 
 export const dishesBreakfast: Dish[] = [
   {
@@ -9,6 +9,7 @@ export const dishesBreakfast: Dish[] = [
     cookingTime: 15,
     opinion: DishOpinion.GOOD,
     price: 5,
+    currency: Currency.KISSES,
     category: 1,
     options: ['🧀 Добавить сыр', '🥓 Добавить балык', '🌿 Добавить зелень'],
     createdAt: new Date(),
@@ -22,6 +23,7 @@ export const dishesBreakfast: Dish[] = [
     cookingTime: 15,
     opinion: DishOpinion.BAD,
     price: 100,
+    currency: Currency.KISSES,
     category: 1,
     options: ['💛 Жидкий желток'],
     createdAt: new Date(),
@@ -35,6 +37,7 @@ export const dishesBreakfast: Dish[] = [
     cookingTime: 10,
     opinion: DishOpinion.VERY_GOOD,
     price: 4,
+    currency: Currency.KISSES,
     category: 1,
     options: [
       '🧀 Добавить творожный сыр',
@@ -52,6 +55,7 @@ export const dishesBreakfast: Dish[] = [
     cookingTime: 30,
     opinion: DishOpinion.GOOD,
     price: 5,
+    currency: Currency.KISSES,
     category: 1,
     options: [
       '🥓 Добавить балык',
@@ -69,6 +73,7 @@ export const dishesBreakfast: Dish[] = [
     cookingTime: 30,
     opinion: DishOpinion.EXCELLENT,
     price: 5,
+    currency: Currency.KISSES,
     category: 1,
     options: ['🥬 Добавить листья салата'],
     createdAt: new Date(),
@@ -82,6 +87,7 @@ export const dishesBreakfast: Dish[] = [
     cookingTime: 20,
     opinion: DishOpinion.GOOD,
     price: 5,
+    currency: Currency.KISSES,
     category: 1,
     options: [
       '🧀 Добавить творожный сыр',
@@ -100,6 +106,7 @@ export const dishesBreakfast: Dish[] = [
     cookingTime: 30,
     opinion: DishOpinion.EXCELLENT,
     price: 5,
+    currency: Currency.KISSES,
     category: 1,
     options: ['🥬 Добавить листья салата'],
     createdAt: new Date(),
@@ -113,6 +120,7 @@ export const dishesBreakfast: Dish[] = [
     cookingTime: 30,
     opinion: DishOpinion.GOOD,
     price: 5,
+    currency: Currency.KISSES,
     category: 1,
     options: [
       '🥚 Добавить яичко',
@@ -130,6 +138,7 @@ export const dishesBreakfast: Dish[] = [
     cookingTime: 20,
     opinion: DishOpinion.GOOD,
     price: 2,
+    currency: Currency.KISSES,
     category: 1,
     options: [
       '🍌 Добавить банан',
@@ -148,6 +157,7 @@ export const dishesBreakfast: Dish[] = [
     cookingTime: 30,
     opinion: DishOpinion.EXCELLENT,
     price: 10,
+    currency: Currency.KISSES,
     category: 1,
     createdAt: new Date(),
   },
@@ -159,6 +169,7 @@ export const dishesBreakfast: Dish[] = [
     cookingTime: 15,
     opinion: DishOpinion.GOOD,
     price: 2,
+    currency: Currency.KISSES,
     category: 1,
     options: [
       '🥄 Добавить сметану',
@@ -178,6 +189,7 @@ export const dishesBreakfast: Dish[] = [
     cookingTime: 30,
     opinion: DishOpinion.VERY_GOOD,
     price: 6,
+    currency: Currency.KISSES,
     category: 1,
     options: [
       '🥄 Добавить сметану',
@@ -194,6 +206,7 @@ export const dishesBreakfast: Dish[] = [
     cookingTime: 45,
     opinion: DishOpinion.GOOD,
     price: 4,
+    currency: Currency.KISSES,
     category: 1,
     options: [
       '🥄 Добавить сметану',
@@ -211,6 +224,7 @@ export const dishesBreakfast: Dish[] = [
     cookingTime: 60,
     opinion: DishOpinion.VERY_GOOD,
     price: 3,
+    currency: Currency.KISSES,
     category: 1,
     options: [
       '🥄 Добавить сметану',
@@ -227,6 +241,7 @@ export const dishesBreakfast: Dish[] = [
     cookingTime: 15,
     opinion: DishOpinion.GOOD,
     price: 7,
+    currency: Currency.KISSES,
     category: 1,
     options: [
       '🥄 Добавить сметану',

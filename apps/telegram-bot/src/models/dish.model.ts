@@ -7,6 +7,11 @@ export enum DishOpinion {
   BAD = '💩',
 }
 
+export enum Currency {
+  KISSES = 'поцелуйчиков',
+  PREMIUM = 'премиум',
+}
+
 export interface Dish {
   id: string;
   photoSrc: string;
@@ -15,6 +20,7 @@ export interface Dish {
   cookingTime: number;
   opinion: DishOpinion;
   price: number;
+  currency: Currency.KISSES;
   category: number;
   options?: string[];
   createdAt: Date;

@@ -1,4 +1,4 @@
-import { Dish, DishOpinion } from '../../models/dish.model';
+import { Currency, Dish, DishOpinion } from '../../models/dish.model';
 
 export const dishesSalad: Dish[] = [
   {
@@ -9,6 +9,7 @@ export const dishesSalad: Dish[] = [
     cookingTime: 5,
     opinion: DishOpinion.EXCELLENT,
     price: 5,
+    currency: Currency.KISSES,
     category: 3,
     options: [
       '🥄 Добавить сметану',
@@ -28,6 +29,7 @@ export const dishesSalad: Dish[] = [
     cookingTime: 5,
     opinion: DishOpinion.VERY_GOOD,
     price: 7,
+    currency: Currency.KISSES,
     category: 3,
     createdAt: new Date(),
   },
@@ -39,6 +41,7 @@ export const dishesSalad: Dish[] = [
     cookingTime: 5,
     opinion: DishOpinion.GOOD,
     price: 7,
+    currency: Currency.KISSES,
     category: 3,
     createdAt: new Date(),
   },
@@ -50,6 +53,7 @@ export const dishesSalad: Dish[] = [
     cookingTime: 5,
     opinion: DishOpinion.EXCELLENT,
     price: 7,
+    currency: Currency.KISSES,
     category: 3,
     createdAt: new Date(),
   },
