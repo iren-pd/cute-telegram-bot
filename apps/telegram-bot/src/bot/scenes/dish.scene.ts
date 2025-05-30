@@ -6,14 +6,11 @@ import updateUser from '../../services/users/actions/updateUser';
 import renderScreen from '../../utils/renderScreen';
 import { addToCart } from '../../services/dish/addToCart';
 import { getDishKeyboard } from '../keyboards/user/dishKeyboard';
-import { Markup } from 'telegraf';
-import { chunkArray } from '../../utils/chunkArray';
 
 const dishScene = new Scenes.BaseScene<Scenes.SceneContext>('dish_');
 
 dishScene.enter(async (ctx) => {
   const dishId = (ctx.scene.state as { dishId?: string }).dishId;
-
   const telegramId = ctx.from?.id;
   const user = telegramId ? await getUser(String(telegramId)) : null;
   if (!user) {
@@ -36,6 +33,9 @@ dishScene.enter(async (ctx) => {
       return;
     }
 
+    const state = ctx.scene.state as { selectedOptions?: string[] };
+    state.selectedOptions = state.selectedOptions || [];
+
     const messageText = `
 ${dish.name}
 ${dish.description}
@@ -54,13 +54,7 @@ ${dish.description}
     });
     const updatedUser = await getUser(String(telegramId));
 
-    const keyboard = getDishKeyboard(dish);
-
-    // await ctx.replyWithPhoto(dish.photoSrc, {
-    //   caption: messageText,
-    //   parse_mode: 'HTML',
-    //   ...keyboard,
-    // });
+    const keyboard = getDishKeyboard(dish, state.selectedOptions);
 
     await renderScreen(
       ctx,
@@ -76,7 +70,7 @@ ${dish.description}
   }
 });
 
-dishScene.action(/option_(.+)/, async (ctx) => {
+dishScene.action(/add_option_(.+)/, async (ctx) => {
   const optionValue = ctx.match[1];
   const dishId = (ctx.scene.state as { dishId?: string }).dishId;
   const telegramId = ctx.from?.id;
@@ -100,24 +94,10 @@ ${dish.description}
 💰 Цена: ${dish.price} ${dish.currency}`;
 
   if (state.selectedOptions.length) {
-    messageText += `\nДобавлено: ${state.selectedOptions.join(', ')}`;
+    messageText += `\n\nДобавлено: ${state.selectedOptions.join(', ')}`;
   }
 
-  const remainingOptions = dish.options.filter(
-    (option) => !state.selectedOptions!.includes(option)
-  );
-  const optionButtons = remainingOptions.map((option) =>
-    Markup.button.callback(option, `option_${option}`)
-  );
-  const keyboardArr = chunkArray(optionButtons, 2);
-  keyboardArr.push([
-    Markup.button.callback('🛒 Добавить в заказ', `add_to_cart_${dish.id}`),
-  ]);
-  keyboardArr.push([
-    Markup.button.callback('⬅️ Назад', 'back'),
-    Markup.button.callback('🛒 Корзина', 'cart'),
-  ]);
-  const keyboard = Markup.inlineKeyboard(keyboardArr);
+  const keyboard = getDishKeyboard(dish, state.selectedOptions);
 
   try {
     await ctx.editMessageText(messageText, {
@@ -132,6 +112,51 @@ ${dish.description}
   }
 
   await ctx.answerCbQuery(`Добавлено: ${optionValue}`);
+});
+
+dishScene.action(/remove_option_(.+)/, async (ctx) => {
+  const optionValue = ctx.match[1];
+  const dishId = (ctx.scene.state as { dishId?: string }).dishId;
+  const telegramId = ctx.from?.id;
+  if (!telegramId || !dishId) return;
+
+  const dish = allDishes.find((d) => d.id === dishId);
+  if (!dish || !dish.options) return;
+
+  const state = ctx.scene.state as { selectedOptions?: string[] };
+  state.selectedOptions = state.selectedOptions || [];
+  const idx = state.selectedOptions.indexOf(optionValue);
+  if (idx !== -1) {
+    state.selectedOptions.splice(idx, 1);
+  }
+
+  let messageText = `
+${dish.name}
+${dish.description}
+
+⏱ Время приготовления: ${dish.cookingTime} мин
+🧑‍🍳 Мое мнение: ${dish.opinion}
+💰 Цена: ${dish.price} ${dish.currency}`;
+
+  if (state.selectedOptions.length) {
+    messageText += `\n\nДобавлено: ${state.selectedOptions.join(', ')}`;
+  }
+
+  const keyboard = getDishKeyboard(dish, state.selectedOptions);
+
+  try {
+    await ctx.editMessageText(messageText, {
+      parse_mode: 'HTML',
+      ...keyboard,
+    });
+  } catch (e) {
+    await ctx.reply(messageText, {
+      parse_mode: 'HTML',
+      ...keyboard,
+    });
+  }
+
+  await ctx.answerCbQuery(`Удалено: ${optionValue}`);
 });
 
 dishScene.action(/add_to_cart_(.+)/, async (ctx) => {
