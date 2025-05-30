@@ -77,12 +77,10 @@ categoryScene.enter(async (ctx) => {
   }
 });
 
-categoryScene.action(/category_(\d+)/, async (ctx) => {
-  const dishId = parseInt(ctx.match[1], 10);
+categoryScene.action(/dish_(.+)/, async (ctx) => {
+  const dishId = ctx.match[1];
   await ctx.answerCbQuery();
-  await ctx.reply(
-    `Вы выбрали блюдо с ID: ${dishId}. Дальнейшая логика (детали блюда/добавление в корзину) еще не реализована.`
-  );
+  await ctx.scene.enter('dish_', { dishId });
 });
 
 categoryScene.action('back', async (ctx) => {

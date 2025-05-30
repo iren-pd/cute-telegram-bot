@@ -7,7 +7,7 @@ export async function getCategoriesInlineKeyboard(category_id: number) {
     (dish) => dish.category === category_id
   );
   const dishButtons = currentCategoryDish.map((dish) =>
-    Markup.button.callback(dish.name, `category_${dish.id}`)
+    Markup.button.callback(dish.name, `dish_${dish.id}`)
   );
 
   const keyboard = chunkArray(dishButtons, 2);
