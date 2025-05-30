@@ -10,7 +10,7 @@ export async function getCategoriesInlineKeyboard(category_id: number) {
     Markup.button.callback(dish.name, `category_${dish.id}`)
   );
 
-  const keyboard = chunkArray(dishButtons, 1);
+  const keyboard = chunkArray(dishButtons, 2);
   keyboard.push([
     Markup.button.callback('⬅️ Назад', 'back'),
     Markup.button.callback('🛒 Корзина', 'cart'),
