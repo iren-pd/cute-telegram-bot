@@ -4,7 +4,6 @@ import renderScreen from '../../utils/renderScreen';
 import { UserStatePage, User } from '../../models/user.model';
 import getUser from '../../services/users/actions/getUser';
 import updateUser from '../../services/users/actions/updateUser';
-import { OrderStatus, OrderPaymentStatus } from '../../models/order.model';
 import { Currency, CurrencyEmoji } from '../../models/dish.model';
 import { removeFromCart } from '../../services/dish/removeFromCart';
 import {
@@ -16,8 +15,9 @@ import { getOrderStatusText } from '../../utils/orderStatusText';
 const cartScene = new Scenes.BaseScene<Scenes.SceneContext>('cart');
 
 export const renderCart = async (ctx: Scenes.SceneContext, user: User) => {
+  const orderStatusText = getOrderStatusText(user);
   let cartText = '🛒 Твоя Корзина 🛒\n\n';
-  cartText += getOrderStatusText(user);
+  cartText += orderStatusText;
 
   if (user.state.cart.dishes && user.state.cart.dishes.length > 0) {
     cartText += `\n💰 Общая стоимость:\n`;
