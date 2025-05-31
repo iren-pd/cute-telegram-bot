@@ -7,17 +7,17 @@ import updateUser from '../../services/users/actions/updateUser';
 import { OrderStatus, OrderPaymentStatus } from '../../models/order.model';
 import { Currency, CurrencyEmoji } from '../../models/dish.model';
 import { removeFromCart } from '../../services/dish/removeFromCart';
+import {
+  confirmOrder,
+  cancelOrder,
+} from '../actions/user/confirmAndCancelOrder';
+import { getOrderStatusText } from '../../utils/orderStatusText';
 
 const cartScene = new Scenes.BaseScene<Scenes.SceneContext>('cart');
 
-const renderCart = async (ctx: Scenes.SceneContext, user: User) => {
+export const renderCart = async (ctx: Scenes.SceneContext, user: User) => {
   let cartText = '🛒 Твоя Корзина 🛒\n\n';
-  cartText += `Статус заказа: ${
-    user.state.cart.status || OrderStatus.NO_STATUS
-  }\n`;
-  cartText += `Статус оплаты: ${
-    user.state.cart.paymentStatus || OrderPaymentStatus.NOT_APPLICABLE
-  }\n`;
+  cartText += getOrderStatusText(user);
 
   if (user.state.cart.dishes && user.state.cart.dishes.length > 0) {
     cartText += `\n💰 Общая стоимость:\n`;
@@ -107,6 +107,9 @@ cartScene.action(/^remove_dish_(.+)$/, async (ctx) => {
     await renderCart(ctx, updatedUser);
   }
 });
+
+cartScene.action('confirm_order', confirmOrder);
+cartScene.action('cancel_order', cancelOrder);
 
 cartScene.action('back_to_menu', async (ctx) => {
   await ctx.scene.enter('main_menu');
