@@ -12,6 +12,11 @@ export enum Currency {
   PREMIUM = 'премиум',
 }
 
+export enum CurrencyEmoji {
+  KISSES = '😘',
+  PREMIUM = '💎',
+}
+
 export interface Dish {
   id: string;
   photoSrc: string;
