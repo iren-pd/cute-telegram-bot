@@ -80,17 +80,21 @@ categoryScene.enter(async (ctx) => {
 categoryScene.action(/dish_(.+)/, async (ctx) => {
   const dishId = ctx.match[1];
   await ctx.answerCbQuery();
+  await ctx.editMessageReplyMarkup({ inline_keyboard: [] });
   await ctx.scene.enter('dish_', { dishId });
 });
 
 categoryScene.action('back', async (ctx) => {
   await ctx.answerCbQuery();
+  await ctx.editMessageReplyMarkup({ inline_keyboard: [] });
   await ctx.scene.enter('menu');
 });
 
 categoryScene.action('cart', async (ctx) => {
   await ctx.answerCbQuery();
+  await ctx.editMessageReplyMarkup({ inline_keyboard: [] });
   await ctx.scene.enter('cart');
+
 });
 
 export default categoryScene;

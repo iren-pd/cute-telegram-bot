@@ -105,6 +105,7 @@ cartScene.action(/^remove_dish_(.+)$/, async (ctx) => {
   const updatedUser = await getUser(String(telegramId));
   if (updatedUser) {
     await renderCart(ctx, updatedUser);
+    await ctx.editMessageReplyMarkup({ inline_keyboard: [] });
   }
 });
 

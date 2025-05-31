@@ -14,7 +14,6 @@ export const getCartInlineKeyboard = (dishes: OrderDish[]) => {
       ]);
     });
 
-    // Добавляем кнопку подтверждения заказа, если есть блюда
     buttons.push([
       Markup.button.callback('✅ Подтвердить заказ', 'confirm_order'),
     ]);

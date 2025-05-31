@@ -188,11 +188,13 @@ dishScene.action(/add_to_cart_(.+)/, async (ctx) => {
 
 dishScene.action('back', async (ctx) => {
   await ctx.answerCbQuery();
+  await ctx.editMessageReplyMarkup({ inline_keyboard: [] });
   await ctx.scene.enter('category_');
 });
 
 dishScene.action('cart', async (ctx) => {
   await ctx.answerCbQuery();
+  await ctx.editMessageReplyMarkup({ inline_keyboard: [] });
   await ctx.scene.enter('cart');
 });
 

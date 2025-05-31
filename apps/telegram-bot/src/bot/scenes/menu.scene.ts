@@ -55,12 +55,15 @@ menuScene.hears('⬅️ Назад', async (ctx) => {
   const user = await getUser(String(telegramId));
   if (!user) return ctx.scene.enter('start');
   const previousPage = user.state.previousPage || UserStatePage.MAIN_MENU;
+
+  await ctx.editMessageReplyMarkup({ inline_keyboard: [] });
   await ctx.reply('Выбрано "⬅️ Назад". Возвращаю назад...');
   await ctx.scene.enter(previousPage);
   return;
 });
 
 menuScene.hears('🛒 Корзина', async (ctx) => {
+  await ctx.editMessageReplyMarkup({ inline_keyboard: [] });
   await ctx.reply('Выбрано "🛒 Корзина". Открываю корзину...');
   await ctx.scene.enter('cart');
 });
@@ -78,6 +81,7 @@ menuScene.on('callback_query', async (ctx) => {
     const categoryName = category?.name || 'Категория';
 
     await ctx.answerCbQuery();
+    await ctx.editMessageReplyMarkup({ inline_keyboard: [] });
     await ctx.scene.enter('category_', { categoryId, categoryName });
   }
 });
