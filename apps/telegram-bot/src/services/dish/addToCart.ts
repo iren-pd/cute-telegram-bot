@@ -49,7 +49,7 @@ export async function addToCart(
   };
 
   currentCart.status = OrderStatus.NEW;
-  currentCart.paymentStatus = OrderPaymentStatus.PENDING;
+  currentCart.paymentStatus = OrderPaymentStatus.PENDING_CONFIRMATION;
 
   await updateUser(userId, {
     state: {

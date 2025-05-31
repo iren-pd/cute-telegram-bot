@@ -10,6 +10,7 @@ export enum OrderStatus {
 
 export enum OrderPaymentStatus {
   PENDING = '⏳ Ожидает оплаты',
+  PENDING_CONFIRMATION = '⏳ Ожидает подтверждения заказа',
   PAID_KISSES = '😘 Оплачено поцелуйчиками',
   PAID_PREMIUM = '💎 Оплачено премиум',
   PAID_MIXED = '💞 Оплачено смешанно',
@@ -20,7 +21,7 @@ export enum OrderPaymentStatus {
 export interface OrderDish {
   dish: Dish;
   selectedOptions: string[] | undefined;
-  quantity: number; 
+  quantity: number;
 }
 
 export interface OrderPayment {
