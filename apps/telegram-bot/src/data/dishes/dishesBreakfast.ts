@@ -1,4 +1,4 @@
-import { Currency, Dish, DishOpinion } from "../../models/dish.model";
+import { Currency, Dish, DishOpinion } from '../../models/dish.model';
 
 export const dishesBreakfast: Dish[] = [
   {
@@ -100,20 +100,6 @@ export const dishesBreakfast: Dish[] = [
   {
     id: '1_7',
     photoSrc: 'https://example.com/images/pasta.jpg',
-    name: '🌯 Лавашики',
-    description:
-      '🥪 Свежий лаваш с яичком, балыком, сыром и сочными помидорками',
-    cookingTime: 30,
-    opinion: DishOpinion.EXCELLENT,
-    price: 5,
-    currency: Currency.KISSES,
-    category: 1,
-    options: ['🥬 Добавить листья салата'],
-    createdAt: new Date(),
-  },
-  {
-    id: '1_8',
-    photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🍜 Мивинка',
     description:
       '🦐 Азиатская лапша с креветками, соевым соусом, пастой том ям, лимоном и кунжутом',
@@ -131,9 +117,9 @@ export const dishesBreakfast: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: '1_9',
+    id: '1_8',
     photoSrc: 'https://example.com/images/pasta.jpg',
-    name: '🥣 Классическая овсянка',
+    name: '🥣 Овсянка',
     description: '🌾 Питательная овсяная каша с различными добавками на выбор',
     cookingTime: 20,
     opinion: DishOpinion.GOOD,
@@ -150,7 +136,7 @@ export const dishesBreakfast: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: '1_10',
+    id: '1_9',
     photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🍙 Онигири',
     description: '🌟 Лучшее что ты когда-либо ел!',
@@ -162,9 +148,9 @@ export const dishesBreakfast: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: '1_11',
+    id: '1_10',
     photoSrc: 'https://example.com/images/pasta.jpg',
-    name: 'Творожок',
+    name: '🥣 Творожок',
     description: '🥄 Полезный творог с фруктами/ягодами/орехами и медом',
     cookingTime: 15,
     opinion: DishOpinion.GOOD,
@@ -182,7 +168,7 @@ export const dishesBreakfast: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: '1_12',
+    id: '1_11',
     photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🥟 Ленивые варенички',
     description: '🧀 Нежные творожные варенички с различными добавками',
@@ -199,7 +185,7 @@ export const dishesBreakfast: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: '1_13',
+    id: '1_12',
     photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🧀 Сырнички',
     description: '🍯 Воздушные сырники с хрустящей корочкой и нежной начинкой',
@@ -217,7 +203,7 @@ export const dishesBreakfast: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: '1_14',
+    id: '1_13',
     photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🥞 Блинчики',
     description: '🥞 Тонкие блинчики с различными начинками и соусами',
@@ -234,7 +220,7 @@ export const dishesBreakfast: Dish[] = [
     createdAt: new Date(),
   },
   {
-    id: '1_15',
+    id: '1_14',
     photoSrc: 'https://example.com/images/pasta.jpg',
     name: '🥪 Французский тост',
     description: '🥞 Классический французский тост с карамельной корочкой',
