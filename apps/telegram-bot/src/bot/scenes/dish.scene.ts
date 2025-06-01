@@ -6,6 +6,7 @@ import updateUser from '../../services/users/actions/updateUser';
 import renderScreen from '../../utils/renderScreen';
 import { addToCart } from '../../services/dish/addToCart';
 import { getDishKeyboard } from '../keyboards/user/dishKeyboard';
+import { removeFromCart } from '../../services/dish/removeFromCart';
 
 const dishScene = new Scenes.BaseScene<Scenes.SceneContext>('dish_');
 
@@ -54,7 +55,11 @@ ${dish.description}
     });
     const updatedUser = await getUser(String(telegramId));
 
-    const keyboard = getDishKeyboard(dish, state.selectedOptions);
+    const keyboard = await getDishKeyboard(
+      dish,
+      state.selectedOptions,
+      String(telegramId)
+    );
 
     await renderScreen(
       ctx,
@@ -97,7 +102,11 @@ ${dish.description}
     messageText += `\n\nДобавлено: ${state.selectedOptions.join(', ')}`;
   }
 
-  const keyboard = getDishKeyboard(dish, state.selectedOptions);
+  const keyboard = await getDishKeyboard(
+    dish,
+    state.selectedOptions,
+    String(telegramId)
+  );
 
   try {
     await ctx.editMessageText(messageText, {
@@ -142,7 +151,11 @@ ${dish.description}
     messageText += `\n\nДобавлено: ${state.selectedOptions.join(', ')}`;
   }
 
-  const keyboard = getDishKeyboard(dish, state.selectedOptions);
+  const keyboard = await getDishKeyboard(
+    dish,
+    state.selectedOptions,
+    String(telegramId)
+  );
 
   try {
     await ctx.editMessageText(messageText, {
@@ -180,9 +193,50 @@ dishScene.action(/add_to_cart_(.+)/, async (ctx) => {
   try {
     await addToCart(String(telegramId), dish, selectedOptions);
     await ctx.answerCbQuery('✅ Блюдо добавлено в корзину');
+
+    const user = await getUser(String(telegramId));
+    if (user) {
+      const keyboard = await getDishKeyboard(
+        dish,
+        selectedOptions,
+        String(telegramId)
+      );
+      await ctx.editMessageReplyMarkup(keyboard.reply_markup);
+    }
   } catch (error) {
     console.error('Error adding to cart:', error);
     await ctx.answerCbQuery('❌ Ошибка при добавлении в корзину');
+  }
+});
+
+dishScene.action(/remove_from_cart_(.+)/, async (ctx) => {
+  const dishId = ctx.match[1];
+  const telegramId = ctx.from?.id;
+
+  if (!telegramId) {
+    await ctx.answerCbQuery('Ошибка: не удалось определить пользователя');
+    return;
+  }
+
+  try {
+    await removeFromCart(String(telegramId), dishId);
+    await ctx.answerCbQuery('✅ Блюдо удалено из корзины');
+
+    const dish = allDishes.find((d) => d.id === dishId);
+    if (dish) {
+      const selectedOptions = (
+        ctx.scene.state as { selectedOptions?: string[] }
+      ).selectedOptions;
+      const keyboard = await getDishKeyboard(
+        dish,
+        selectedOptions,
+        String(telegramId)
+      );
+      await ctx.editMessageReplyMarkup(keyboard.reply_markup);
+    }
+  } catch (error) {
+    console.error('Error removing from cart:', error);
+    await ctx.answerCbQuery('❌ Ошибка при удалении из корзины');
   }
 });
 
