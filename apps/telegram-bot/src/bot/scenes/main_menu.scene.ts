@@ -46,12 +46,16 @@ mainMenuScene.enter(async (ctx) => {
     );
 
     mainMenuScene.hears('🍽️ Меню', async (ctx) => {
-      await ctx.reply('Выбрано "🍽️ Меню". Загружаю меню...');
+      await ctx.reply('Выбрано "🍽️ Меню". Загружаю меню...', {
+        reply_markup: { remove_keyboard: true },
+      });
       await ctx.scene.enter('menu');
     });
 
     mainMenuScene.hears('🛒 Корзина', async (ctx) => {
-      await ctx.reply('Выбрано "🛒 Корзина". Открываю корзину...');
+      await ctx.reply('Выбрано "🛒 Корзина". Открываю корзину...', {
+        reply_markup: { remove_keyboard: true },
+      });
       await ctx.scene.enter('cart');
     });
   } else {
