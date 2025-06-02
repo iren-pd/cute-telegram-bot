@@ -5,6 +5,7 @@ import updateUser from '../../../services/users/actions/updateUser';
 import getUser from '../../../services/users/actions/getUser';
 import { UserRole, UserStatePage } from '../../../models/user.model';
 import { OrderPaymentStatus, OrderStatus } from '../../../models/order.model';
+import { allowedAdmins } from '../../../config/admin.config';
 
 const startScene = new Scenes.BaseScene<Scenes.SceneContext>('start');
 
@@ -60,6 +61,21 @@ startScene.enter(async (ctx) => {
         },
       });
       await ctx.scene.enter('main_menu');
+    }
+  } else if (allowedAdmins.includes(username)) {
+    if (user) {
+      await updateUser(String(telegramId), {
+        role: UserRole.ADMIN,
+        updatedAt: new Date().toISOString(),
+        state: {
+          ...user.state,
+          currentPage: UserStatePage.ADMIN_PANEL,
+          previousPage: UserStatePage.START,
+        },
+      });
+      
+      await ctx.reply('Добро пожаловать в панель администратора!');
+      // await ctx.scene.enter('main_menu');
     }
   } else {
     await ctx.reply('Вы не милый котик, у вас нет доступа к этому боту.');
