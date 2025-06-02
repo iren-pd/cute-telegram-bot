@@ -1,12 +1,12 @@
 import { Scenes } from 'telegraf';
-import { UserRole, UserStatePage, UserState } from '../../models/user.model';
-import getUser from '../../services/users/actions/getUser';
-import { dishes as allDishes } from '../../data/dishes';
-import updateUser from '../../services/users/actions/updateUser';
-import renderScreen from '../../utils/renderScreen';
-import { addToCart } from '../../services/dish/addToCart';
-import { getDishKeyboard } from '../keyboards/user/dishKeyboard';
-import { removeFromCart } from '../../services/dish/removeFromCart';
+import { UserRole, UserStatePage, UserState } from '../../../models/user.model';
+import getUser from '../../../services/users/actions/getUser';
+import { dishes as allDishes } from '../../../data/dishes';
+import updateUser from '../../../services/users/actions/updateUser';
+import renderScreen from '../../../utils/renderScreen';
+import { addToCart } from '../../../services/dish/addToCart';
+import { getDishKeyboard } from '../../keyboards/user/dishKeyboard';
+import { removeFromCart } from '../../../services/dish/removeFromCart';
 
 const dishScene = new Scenes.BaseScene<Scenes.SceneContext>('dish_');
 

@@ -1,10 +1,10 @@
 import { Scenes } from 'telegraf';
-import { allowedUsers } from '../../config/user.config';
-import registerUser from '../../services/users/actions/registerUser';
-import updateUser from '../../services/users/actions/updateUser';
-import getUser from '../../services/users/actions/getUser';
-import { UserRole, UserStatePage } from '../../models/user.model';
-import { OrderPaymentStatus, OrderStatus } from '../../models/order.model';
+import { allowedUsers } from '../../../config/user.config';
+import registerUser from '../../../services/users/actions/registerUser';
+import updateUser from '../../../services/users/actions/updateUser';
+import getUser from '../../../services/users/actions/getUser';
+import { UserRole, UserStatePage } from '../../../models/user.model';
+import { OrderPaymentStatus, OrderStatus } from '../../../models/order.model';
 
 const startScene = new Scenes.BaseScene<Scenes.SceneContext>('start');
 
