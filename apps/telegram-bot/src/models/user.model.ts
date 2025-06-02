@@ -19,7 +19,8 @@ export enum UserStatePage {
   CART = 'cart',
   MENU = 'menu',
   CATEGORY = 'category',
-  DISH = 'dish'
+  DISH = 'dish',
+  ADMIN_PANEL = 'admin_panel',
 }
 
 export interface UserState {
