@@ -1,16 +1,16 @@
 import { Scenes } from 'telegraf';
-import { getCartInlineKeyboard } from '../../keyboards/user/cartKeyboard';
-import renderScreen from '../../../utils/renderScreen';
-import { UserStatePage, User } from '../../../models/user.model';
-import getUser from '../../../services/users/actions/getUser';
-import updateUser from '../../../services/users/actions/updateUser';
-import { Currency, CurrencyEmoji } from '../../../models/dish.model';
-import { removeFromCart } from '../../../services/dish/removeFromCart';
+import { getCartInlineKeyboard } from '../keyboards/user/cartKeyboard';
+import renderScreen from '../../utils/renderScreen';
+import { UserStatePage, User } from '../../models/user.model';
+import getUser from '../../services/users/actions/getUser';
+import updateUser from '../../services/users/actions/updateUser';
+import { Currency, CurrencyEmoji } from '../../models/dish.model';
+import { removeFromCart } from '../../services/dish/removeFromCart';
 import {
   confirmOrder,
   cancelOrder,
-} from '../../actions/user/confirmAndCancelOrder';
-import { getOrderStatusText } from '../../../utils/orderStatusText';
+} from '../actions/user/confirmAndCancelOrder';
+import { getOrderStatusText } from '../../utils/orderStatusText';
 
 const cartScene = new Scenes.BaseScene<Scenes.SceneContext>('cart');
 

@@ -1,11 +1,11 @@
 import { Scenes } from 'telegraf';
-import { allowedUsers } from '../../../config/user.config';
-import registerUser from '../../../services/users/actions/registerUser';
-import updateUser from '../../../services/users/actions/updateUser';
-import getUser from '../../../services/users/actions/getUser';
-import { UserRole, UserStatePage } from '../../../models/user.model';
-import { OrderPaymentStatus, OrderStatus } from '../../../models/order.model';
-import { allowedAdmins } from '../../../config/admin.config';
+import { allowedUsers } from '../../config/user.config';
+import registerUser from '../../services/users/actions/registerUser';
+import updateUser from '../../services/users/actions/updateUser';
+import getUser from '../../services/users/actions/getUser';
+import { UserRole, UserStatePage } from '../../models/user.model';
+import { OrderPaymentStatus, OrderStatus } from '../../models/order.model';
+import { allowedAdmins } from '../../config/admin.config';
 
 const startScene = new Scenes.BaseScene<Scenes.SceneContext>('start');
 
@@ -73,9 +73,9 @@ startScene.enter(async (ctx) => {
           previousPage: UserStatePage.START,
         },
       });
-      
+
       await ctx.reply('Добро пожаловать в панель администратора!');
-      // await ctx.scene.enter('main_menu');
+      await ctx.scene.enter('admin_panel');
     }
   } else {
     await ctx.reply('Вы не милый котик, у вас нет доступа к этому боту.');

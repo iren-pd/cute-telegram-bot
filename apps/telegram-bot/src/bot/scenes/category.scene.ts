@@ -1,12 +1,12 @@
 import { Scenes } from 'telegraf';
-import { UserRole, UserStatePage, UserState } from '../../../models/user.model';
-import getUser from '../../../services/users/actions/getUser';
-import { dishes as allDishes } from '../../../data/dishes';
-import getCategoryDescription from '../../../services/category/getCategoryDescription';
+import { UserRole, UserStatePage, UserState } from '../../models/user.model';
+import getUser from '../../services/users/actions/getUser';
+import { dishes as allDishes } from '../../data/dishes';
+import getCategoryDescription from '../../services/category/getCategoryDescription';
 // @ts-ignore
-import { getCategoriesInlineKeyboard } from '../../keyboards/user/categoryKeyboard';
-import renderScreen from '../../../utils/renderScreen';
-import updateUser from '../../../services/users/actions/updateUser';
+import { getCategoriesInlineKeyboard } from '../keyboards/user/categoryKeyboard';
+import renderScreen from '../../utils/renderScreen';
+import updateUser from '../../services/users/actions/updateUser';
 
 const categoryScene = new Scenes.BaseScene<Scenes.SceneContext>('category_');
 

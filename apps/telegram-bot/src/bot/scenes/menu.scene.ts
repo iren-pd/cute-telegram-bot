@@ -1,10 +1,10 @@
 import { Scenes } from 'telegraf';
-import { UserRole, UserState, UserStatePage } from '../../../models/user.model';
-import getUser from '../../../services/users/actions/getUser';
-import updateUser from '../../../services/users/actions/updateUser';
-import renderScreen from '../../../utils/renderScreen';
-import getCategories from '../../../services/category/getCategories';
-import { getMenuInlineKeyboard } from '../../keyboards/user/menuKeyboard';
+import { UserRole, UserState, UserStatePage } from '../../models/user.model';
+import getUser from '../../services/users/actions/getUser';
+import updateUser from '../../services/users/actions/updateUser';
+import renderScreen from '../../utils/renderScreen';
+import getCategories from '../../services/category/getCategories';
+import { getMenuInlineKeyboard } from '../keyboards/user/menuKeyboard';
 
 const menuScene = new Scenes.BaseScene<Scenes.SceneContext>('menu');
 

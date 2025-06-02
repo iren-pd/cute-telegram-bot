@@ -1,8 +1,8 @@
 import { Scenes } from 'telegraf';
-import mainMenuKeyboard from '../../keyboards/user/mainMenuKeyboard';
-import renderScreen from '../../../utils/renderScreen';
-import { UserRole, UserStatePage } from '../../../models/user.model';
-import getUser from '../../../services/users/actions/getUser';
+import mainMenuKeyboard from '../keyboards/user/mainMenuKeyboard';
+import renderScreen from '../../utils/renderScreen';
+import { UserRole, UserStatePage } from '../../models/user.model';
+import getUser from '../../services/users/actions/getUser';
 import 'dotenv/config';
 
 const mainMenuScene = new Scenes.BaseScene<Scenes.SceneContext>('main_menu');
