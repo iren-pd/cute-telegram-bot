@@ -1,20 +1,25 @@
 import { Scenes } from 'telegraf';
 import { OrderStatus, OrderPaymentStatus } from '../../models/order.model';
-import { UserRole, UserStatePage } from '../../models/user.model';
+import { User, UserRole, UserStatePage } from '../../models/user.model';
 import getUser from '../../services/users/actions/getUser';
 import updateUser from '../../services/users/actions/updateUser';
 import renderScreen from '../../utils/renderScreen';
 import { getAdminOrderKeyboard } from '../keyboards/admin/adminOrderKeyboard';
 
-const adminOrderScene = new Scenes.BaseScene<Scenes.SceneContext>('admin_order');
+const adminOrderScene = new Scenes.BaseScene<Scenes.SceneContext>(
+  'admin_order'
+);
 
-export const renderOrder = async (ctx: Scenes.SceneContext, user: any) => {
+export const renderOrder = async (ctx: Scenes.SceneContext, user: User) => {
+  console.log('renderOrder', user);
   let orderText = `👤 Пользователь: @${user.username}\n\n`;
   orderText += `📦 Заказ:\n`;
 
   if (user.state.cart.dishes && user.state.cart.dishes.length > 0) {
     user.state.cart.dishes.forEach((orderDish: any, index: number) => {
-      orderText += `${index + 1}. ${orderDish.dish.name} (x${orderDish.quantity || 1})`;
+      orderText += `${index + 1}. ${orderDish.dish.name} (x${
+        orderDish.quantity || 1
+      })`;
       if (orderDish.selectedOptions && orderDish.selectedOptions.length > 0) {
         orderText += '\n  -' + orderDish.selectedOptions.join(', ');
       }
@@ -36,10 +41,19 @@ export const renderOrder = async (ctx: Scenes.SceneContext, user: any) => {
   orderText += `\n💳 Статус оплаты: ${user.state.cart.paymentStatus}`;
 
   const keyboard = getAdminOrderKeyboard(user.state.cart);
-  await renderScreen(ctx, orderText, UserRole.ADMIN, UserStatePage.ADMIN_PANEL, user.state, keyboard);
+  console.log('keyboard', keyboard);
+  await renderScreen(
+    ctx,
+    orderText,
+    UserRole.ADMIN,
+    UserStatePage.ADMIN_PANEL,
+    user.state,
+    keyboard
+  );
 };
 
 adminOrderScene.enter(async (ctx) => {
+  console.log('Вошли в admin_order', ctx.scene.state);
   const telegramId = ctx.from?.id;
   if (!telegramId) {
     await ctx.reply('Ошибка: не удалось получить данные пользователя.');
@@ -53,13 +67,12 @@ adminOrderScene.enter(async (ctx) => {
   }
 
   const userId = (ctx.scene.state as { userId?: string }).userId;
-  console.log('userId', userId);
   if (!userId) {
     await ctx.reply('Ошибка: не указан пользователь.');
     return ctx.scene.leave();
   }
 
-  const user = await getUser(userId);
+  const user = await getUser(String(userId));
   if (!user) {
     await ctx.reply('Пользователь не найден.');
     return ctx.scene.leave();
@@ -86,6 +99,8 @@ adminOrderScene.action(/^set_order_status_(.+)$/, async (ctx) => {
     },
   });
 
+  await ctx.editMessageReplyMarkup({ inline_keyboard: [] });
+
   const updatedUser = await getUser(userId);
   if (updatedUser) {
     await renderOrder(ctx, updatedUser);
@@ -109,6 +124,8 @@ adminOrderScene.action(/^set_payment_status_(.+)$/, async (ctx) => {
       },
     },
   });
+
+  await ctx.editMessageReplyMarkup({ inline_keyboard: [] });
 
   const updatedUser = await getUser(userId);
   if (updatedUser) {
