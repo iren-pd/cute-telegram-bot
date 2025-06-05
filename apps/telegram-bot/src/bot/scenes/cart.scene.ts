@@ -113,10 +113,14 @@ cartScene.action('confirm_order', confirmOrder);
 cartScene.action('cancel_order', cancelOrder);
 
 cartScene.action('back_to_menu', async (ctx) => {
+  await ctx.answerCbQuery();
+  await ctx.editMessageReplyMarkup({ inline_keyboard: [] });
   await ctx.scene.enter('main_menu');
 });
 
 cartScene.action('go_to_menu', async (ctx) => {
+  await ctx.answerCbQuery();
+  await ctx.editMessageReplyMarkup({ inline_keyboard: [] });
   await ctx.scene.enter('menu');
 });
 
