@@ -12,9 +12,9 @@ export enum OrderStatus {
 export enum OrderPaymentStatus {
   PENDING = '⏳ Ожидает оплаты',
   PENDING_CONFIRMATION = '⏳ Ожидает подтверждения заказа',
-  PAID_KISSES = '😘 Оплачено поцелуйчиками',
-  PAID_PREMIUM = '💎 Оплачено премиум',
-  PAID_MIXED = '💞 Оплачено смешанно',
+  PAID_KISSES = '😘 Оплачено',
+  PAID_PREMIUM = '💎 Оплачено',
+  PAID_MIXED = '💞 Оплачено',
   FAILED = '⚠️ Ошибка оплаты',
   NOT_APPLICABLE = '❓ Выбери блюдо, чтобы оплатить',
 }
