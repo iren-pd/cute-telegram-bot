@@ -23,8 +23,8 @@ const renderScreen = async (
     await ctx.reply('У вас нет доступа к боту.');
     return ctx.scene.enter('start');
   }
-  const validPages = Object.values(UserStatePage);
-  if (!state.currentPage || !validPages.includes(state.currentPage)) {
+
+  if (!state.currentPage || !state.currentPage.startsWith(route)) {
     await ctx.reply(
       'Что-то пошло не так, возвращаю в главное меню...',
       mainMenuKeyboard
