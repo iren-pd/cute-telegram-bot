@@ -40,28 +40,19 @@ adminPanelScene.enter(async (ctx) => {
 
 adminPanelScene.action('refresh_orders', async (ctx) => {
   const users = await getAllUsers();
-  console.log('users', users);
-  const activeOrder = users.find(
-    (user) => {
-      // console.log('user', user.state.cart);
-      return (
-        user.state.cart.status !== OrderStatus.NO_STATUS &&
-        user.state.cart.dishes.length > 0
-      );
-    }
-  );
-
-  // console.log('activeOrder', activeOrder?.state.cart);
+  const activeOrder = users.find((user) => {
+    return (
+      user.state.cart.status !== OrderStatus.NO_STATUS &&
+      user.state.cart.dishes.length > 0
+    );
+  });
 
   if (activeOrder) {
-    await ctx.scene.enter('admin_order', { userId: activeOrder.telegramId });
+    console.log('Переход в admin_order', activeOrder.telegramId, typeof activeOrder.telegramId);
+    await ctx.scene.enter('admin_order', { userId: String(activeOrder.telegramId) });
   } else {
     await ctx.reply('Активных заказов нет.');
   }
-});
-
-adminPanelScene.action('show_statistics', async (ctx) => {
-  await ctx.reply('Статистика будет доступна в следующем обновлении.');
 });
 
 export default adminPanelScene;
