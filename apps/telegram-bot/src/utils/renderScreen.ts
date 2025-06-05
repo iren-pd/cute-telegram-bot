@@ -1,5 +1,10 @@
 import { Scenes } from 'telegraf';
-import { UserRole, UserState, PageWithId } from '../models/user.model';
+import {
+  UserRole,
+  UserState,
+  PageWithId,
+  UserStatePage,
+} from '../models/user.model';
 import mainMenuKeyboard from '../bot/keyboards/user/mainMenuKeyboard';
 
 /**
@@ -33,10 +38,8 @@ const renderScreen = async (
     return;
   }
 
-  const currentPageBase = state.currentPage.split('_')[0];
-  const routeBase = route.split('_')[0];
-
-  if (currentPageBase !== routeBase) {
+  const validPages = Object.values(UserStatePage);
+  if (!validPages.includes(route as UserStatePage)) {
     await ctx.reply('Вы были перемещены в главное меню.', mainMenuKeyboard);
     ctx.scene.enter('main_menu');
     return;
