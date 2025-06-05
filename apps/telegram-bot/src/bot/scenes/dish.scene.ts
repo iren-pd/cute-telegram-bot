@@ -1,5 +1,10 @@
 import { Scenes } from 'telegraf';
-import { UserRole, UserStatePage, UserState } from '../../models/user.model';
+import {
+  UserRole,
+  UserStatePage,
+  UserState,
+  PageWithId,
+} from '../../models/user.model';
 import getUser from '../../services/users/actions/getUser';
 import { dishes as allDishes } from '../../data/dishes';
 import updateUser from '../../services/users/actions/updateUser';
@@ -50,7 +55,7 @@ ${dish.description}
       state: {
         ...user.state,
         previousPage: user.state.currentPage,
-        currentPage: UserStatePage.DISH,
+        currentPage: `dish_${dishId}` as PageWithId,
       },
     });
     const updatedUser = await getUser(String(telegramId));

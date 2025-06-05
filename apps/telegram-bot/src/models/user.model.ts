@@ -23,9 +23,14 @@ export enum UserStatePage {
   ADMIN_PANEL = 'admin_panel',
 }
 
+export type PageWithId =
+  | UserStatePage
+  | `dish_${string}`
+  | `category_${number}`;
+
 export interface UserState {
-  currentPage: UserStatePage;
-  previousPage: UserStatePage;
+  currentPage: PageWithId;
+  previousPage: PageWithId;
   cart: Order;
 }
 

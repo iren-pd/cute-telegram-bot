@@ -1,5 +1,10 @@
 import { Scenes } from 'telegraf';
-import { UserRole, UserStatePage, UserState } from '../../models/user.model';
+import {
+  UserRole,
+  UserStatePage,
+  UserState,
+  PageWithId,
+} from '../../models/user.model';
 import getUser from '../../services/users/actions/getUser';
 import { dishes as allDishes } from '../../data/dishes';
 import getCategoryDescription from '../../services/category/getCategoryDescription';
@@ -58,7 +63,7 @@ categoryScene.enter(async (ctx) => {
       state: {
         ...user.state,
         previousPage: user.state.currentPage,
-        currentPage: UserStatePage.CATEGORY,
+        currentPage: `category_${categoryId}` as PageWithId,
       },
     });
     const updatedUser = await getUser(String(telegramId));
