@@ -9,7 +9,9 @@ export async function getAllUsers(): Promise<User[]> {
 
     const users: User[] = [];
     querySnapshot.forEach((doc) => {
-      users.push(doc.data() as User);
+      const user = doc.data() as User;
+      (user as any).telegramId = doc.id;
+      users.push(user);
     });
 
     return users;
