@@ -9,6 +9,7 @@ async function registerUser(user: User): Promise<void> {
 
     await setDoc(doc(db, 'users', String(user.telegramId)), {
       id: generatedId,
+      telegramId: user.telegramId,
       username: user.username || '',
       createdAt: user.createdAt || new Date().toISOString(),
       role: user.role || UserRole.GUEST,
