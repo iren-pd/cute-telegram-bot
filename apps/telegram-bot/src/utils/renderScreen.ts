@@ -1,5 +1,5 @@
 import { Scenes } from 'telegraf';
-import { UserRole, UserStatePage, UserState } from '../models/user.model';
+import { UserRole, UserState, PageWithId } from '../models/user.model';
 import mainMenuKeyboard from '../bot/keyboards/user/mainMenuKeyboard';
 
 /**
@@ -15,7 +15,7 @@ const renderScreen = async (
   ctx: Scenes.SceneContext,
   message: string,
   role: UserRole,
-  route: UserStatePage,
+  route: PageWithId,
   state: UserState,
   keyboard?: any
 ) => {
@@ -24,15 +24,19 @@ const renderScreen = async (
     return ctx.scene.enter('start');
   }
 
-  if (!state.currentPage || !state.currentPage.startsWith(route)) {
+  if (!state.currentPage) {
     await ctx.reply(
       'Что-то пошло не так, возвращаю в главное меню...',
       mainMenuKeyboard
     );
-    return ctx.scene.enter('main_menu');
+    ctx.scene.enter('main_menu');
+    return;
   }
 
-  if (state.currentPage !== route) {
+  const currentPageBase = state.currentPage.split('_')[0];
+  const routeBase = route.split('_')[0];
+
+  if (currentPageBase !== routeBase) {
     await ctx.reply('Вы были перемещены в главное меню.', mainMenuKeyboard);
     ctx.scene.enter('main_menu');
     return;
