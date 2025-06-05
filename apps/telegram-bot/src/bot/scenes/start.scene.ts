@@ -74,7 +74,6 @@ startScene.enter(async (ctx) => {
         },
       });
 
-      await ctx.reply('Добро пожаловать в панель администратора!');
       await ctx.scene.enter('admin_panel');
     }
   } else {
