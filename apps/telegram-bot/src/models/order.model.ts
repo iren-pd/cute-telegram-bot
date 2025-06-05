@@ -4,6 +4,7 @@ export enum OrderStatus {
   NO_STATUS = '📝 Ожидает оформления',
   NEW = '🆕 Новый',
   PROCESSING = '🔄 В обработке',
+  WORK = '🔄 В работе',
   READY = '✅ Готов',
   CANCELLED = '❌ Отменён',
 }
