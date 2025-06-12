@@ -12,7 +12,7 @@ const adminPanelScene = new Scenes.BaseScene<Scenes.SceneContext>(
 
 adminPanelScene.enter(async (ctx) => {
   const telegramId = ctx.from?.id;
-  console.log('telegramId', telegramId);
+
   if (!telegramId) {
     await ctx.reply('Ошибка: не удалось получить данные пользователя.');
     return ctx.scene.leave();
@@ -48,7 +48,6 @@ adminPanelScene.action('refresh_orders', async (ctx) => {
   });
 
   if (activeOrder) {
-    console.log('Переход в admin_order', activeOrder.telegramId, typeof activeOrder.telegramId);
     await ctx.scene.enter('admin_order', { userId: String(activeOrder.telegramId) });
   } else {
     await ctx.reply('Активных заказов нет.');

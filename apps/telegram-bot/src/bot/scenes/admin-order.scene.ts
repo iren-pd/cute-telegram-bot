@@ -11,7 +11,6 @@ const adminOrderScene = new Scenes.BaseScene<Scenes.SceneContext>(
 );
 
 export const renderOrder = async (ctx: Scenes.SceneContext, user: User) => {
-  console.log('renderOrder', user);
   let orderText = `👤 Пользователь: @${user.username}\n\n`;
   orderText += `📦 Заказ:\n`;
 
@@ -41,7 +40,6 @@ export const renderOrder = async (ctx: Scenes.SceneContext, user: User) => {
   orderText += `\n💳 Статус оплаты: ${user.state.cart.paymentStatus}`;
 
   const keyboard = getAdminOrderKeyboard(user.state.cart);
-  console.log('keyboard', keyboard);
   await renderScreen(
     ctx,
     orderText,
